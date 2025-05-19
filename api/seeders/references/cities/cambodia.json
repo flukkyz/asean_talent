@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Kaôh Kong",
+    "hc_key": "kh-kk",
+    "lat": "11.5609",
+    "lng": "103.466"
+  },
+  {
+    "name": "Phnom Penh",
+    "hc_key": "kh-pp",
+    "lat": "11.5733",
+    "lng": "104.874"
+  },
+  {
+    "name": "Krong Preah Sihanouk",
+    "hc_key": "kh-ka",
+    "lat": "10.4854",
+    "lng": "103.775"
+  },
+  {
+    "name": "Bântéay Méanchey",
+    "hc_key": "kh-om",
+    "lat": "13.7359",
+    "lng": "102.873"
+  },
+  {
+    "name": "Batdâmbâng",
+    "hc_key": "kh-ba",
+    "lat": "12.9675",
+    "lng": "103.068"
+  },
+  {
+    "name": "Pouthisat",
+    "hc_key": "kh-po",
+    "lat": "12.3391",
+    "lng": "103.549"
+  },
+  {
+    "name": "Siemréab",
+    "hc_key": "kh-si",
+    "lat": "13.5711",
+    "lng": "104.043"
+  },
+  {
+    "name": "Otdar Mean Chey",
+    "hc_key": "kh-oc",
+    "lat": "14.1712",
+    "lng": "103.55"
+  },
+  {
+    "name": "Krong Pailin",
+    "hc_key": "kh-pl",
+    "lat": "12.8901",
+    "lng": "102.611"
+  },
+  {
+    "name": "Kâmpóng Cham",
+    "hc_key": "kh-km",
+    "lat": "12.1206",
+    "lng": "105.629"
+  },
+  {
+    "name": "Kâmpóng Chhnang",
+    "hc_key": "kh-kg",
+    "lat": "12.1624",
+    "lng": "104.548"
+  },
+  {
+    "name": "Kândal",
+    "hc_key": "kh-kn",
+    "lat": "11.5453",
+    "lng": "104.973"
+  },
+  {
+    "name": "Kâmpóng Sp?",
+    "hc_key": "kh-ks",
+    "lat": "11.5221",
+    "lng": "104.282"
+  },
+  {
+    "name": "Kâmpóng Thum",
+    "hc_key": "kh-kt",
+    "lat": "12.6883",
+    "lng": "104.972"
+  },
+  {
+    "name": "Prey Vêng",
+    "hc_key": "kh-py",
+    "lat": "11.3561",
+    "lng": "105.473"
+  },
+  {
+    "name": "Preah Vihéar",
+    "hc_key": "kh-ph",
+    "lat": "13.728",
+    "lng": "105.125"
+  },
+  {
+    "name": "St?ng Trêng",
+    "hc_key": "kh-st",
+    "lat": "13.6662",
+    "lng": "106.095"
+  },
+  {
+    "name": "Krâchéh",
+    "hc_key": "kh-kh",
+    "lat": "12.66",
+    "lng": "106.184"
+  },
+  {
+    "name": "Môndól Kiri",
+    "hc_key": "kh-mk",
+    "lat": "12.6284",
+    "lng": "106.961"
+  },
+  {
+    "name": "Rôtânôkiri",
+    "hc_key": "kh-ro",
+    "lat": "13.2418",
+    "lng": "107.082"
+  },
+  {
+    "name": "Kâmpôt",
+    "hc_key": "kh-kp",
+    "lat": "10.8503",
+    "lng": "104.328"
+  },
+  {
+    "name": "Kep",
+    "hc_key": "kh-ke",
+    "lat": "10.5308",
+    "lng": "104.346"
+  },
+  {
+    "name": "Svay Rieng",
+    "hc_key": "kh-sr",
+    "lat": "11.0416",
+    "lng": "105.888"
+  },
+  {
+    "name": "Takêv",
+    "hc_key": "kh-ta",
+    "lat": "10.9346",
+    "lng": "104.751"
+  }
+]

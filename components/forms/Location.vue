@@ -1,0 +1,137 @@
+<template>
+  <v-dialog v-model="dialog" persistent scrollable max-width="500">
+    <v-form ref="form" v-model="valid" @submit.prevent="save">
+      <v-card>
+        <v-toolbar flat>
+          <v-toolbar-title>
+            <v-icon class="mr-2">
+              {{ headerIcon }}
+            </v-icon>
+            {{ headerText }}
+          </v-toolbar-title>
+          <v-spacer />
+          <v-btn fab x-small text @click="closeDialog">
+            <v-icon>
+              fas fa-times
+            </v-icon>
+          </v-btn>
+        </v-toolbar>
+
+        <v-card-text>
+          <v-text-field
+            v-model="form.name"
+            :label="modelName"
+            outlined
+            :autofocus="mode === 'add'"
+            :rules="rules.name"
+            required
+          />
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="form.lat"
+                label="Lat"
+                dense
+                outlined
+              />
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-text-field
+                v-model="form.lng"
+                label="Lng"
+                dense
+                outlined
+              />
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            type="submit"
+            x-large
+            block
+            color="primary"
+            :disabled="saving || !valid"
+            :loading="saving"
+          >
+            Save
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-form>
+  </v-dialog>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      modelName: '',
+      dialog: false,
+      mode: '',
+      valid: true,
+      saving: false,
+      rules: {
+        name: [
+          v => !!v || `${this.modelName} is required`
+        ]
+      },
+      form: {}
+    }
+  },
+  computed: {
+    headerText () {
+      return this.mode === 'add' ? `Create ${this.modelName}` : `Update ${this.modelName}`
+    },
+    headerIcon () {
+      return this.mode === 'add' ? 'fas fa-plus' : 'fas fa-edit'
+    }
+  },
+  created () {
+    this.$bus.$on('open-name-form', (modelName, data) => {
+      this.modelName = modelName
+      this.$overlay.showLoading()
+      this.saving = false
+      this.clearData()
+      this.mode = 'add'
+      if (data) {
+        this.mode = 'edit'
+        this.form = {
+          ...this.form,
+          ...data
+        }
+      }
+      this.dialog = true
+      setTimeout(() => {
+        if (this.$refs.form) {
+          this.$refs.form.resetValidation()
+        }
+      })
+    })
+  },
+  beforeDestroy () {
+    this.$bus.$off('open-name-form')
+  },
+  methods: {
+    closeDialog () {
+      this.dialog = false
+      this.$overlay.hide()
+    },
+    clearData () {
+      this.form = {
+        name: '',
+        lat: null,
+        lng: null
+      }
+    },
+    save () {
+      if (this.$refs.form.validate()) {
+        this.saving = true
+        this.$emit(this.mode, this.form)
+        this.dialog = false
+      }
+    }
+  }
+}
+</script>

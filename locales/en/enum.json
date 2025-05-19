@@ -1,0 +1,13 @@
+{
+  "GENDER_MALE": "Male",
+  "GENDER_FEMALE": "Female",
+  "USER_ROLE_ADMIN": "System Administrator",
+  "USER_ROLE_EXECUTIVE": "Executive Administrator",
+  "USER_ROLE_EDITOR": "Editor",
+  "USER_ROLE_AUTHOR": "Author",
+  "USER_ROLE_USER": "User"
+
+  
+
+
+}

@@ -1,0 +1,464 @@
+[
+  {
+    "name": "Chanthaburi",
+    "hc_key": "th-ct",
+    "lat": "12.8117",
+    "lng": "102.139"
+  },
+  {
+    "name": "Phangnga",
+    "hc_key": "th-pg",
+    "lat": "8.576779999999999",
+    "lng": "98.39400000000001"
+  },
+  {
+    "name": "Surat Thani",
+    "hc_key": "th-st",
+    "lat": "9.0048",
+    "lng": "99.0107"
+  },
+  {
+    "name": "Krabi",
+    "hc_key": "th-kr",
+    "lat": "8.1333",
+    "lng": "98.984"
+  },
+  {
+    "name": "Satun",
+    "hc_key": "th-sa",
+    "lat": "6.85827",
+    "lng": "99.9633"
+  },
+  {
+    "name": "Trang",
+    "hc_key": "th-tg",
+    "lat": "7.56967",
+    "lng": "99.6467"
+  },
+  {
+    "name": "Trat",
+    "hc_key": "th-tt",
+    "lat": "12.3925",
+    "lng": "102.541"
+  },
+  {
+    "name": "Phatthalung",
+    "hc_key": "th-pl",
+    "lat": "7.47276",
+    "lng": "100.062"
+  },
+  {
+    "name": "Phitsanulok",
+    "hc_key": "th-ps",
+    "lat": "16.9748",
+    "lng": "100.49"
+  },
+  {
+    "name": "Kamphaeng Phet",
+    "hc_key": "th-kp",
+    "lat": "16.4009",
+    "lng": "99.5098"
+  },
+  {
+    "name": "Phichit",
+    "hc_key": "th-pc",
+    "lat": "16.2321",
+    "lng": "100.374"
+  },
+  {
+    "name": "Suphan Buri",
+    "hc_key": "th-sh",
+    "lat": "14.4298",
+    "lng": "100.034"
+  },
+  {
+    "name": "Ang Thong",
+    "hc_key": "th-at",
+    "lat": "14.6335",
+    "lng": "100.357"
+  },
+  {
+    "name": "Lop Buri",
+    "hc_key": "th-lb",
+    "lat": "15.1147",
+    "lng": "100.944"
+  },
+  {
+    "name": "Phra Nakhon Si Ayutthaya",
+    "hc_key": "th-pa",
+    "lat": "14.402",
+    "lng": "100.522"
+  },
+  {
+    "name": "Nakhon Pathom",
+    "hc_key": "th-np",
+    "lat": "13.917",
+    "lng": "100.072"
+  },
+  {
+    "name": "Sing Buri",
+    "hc_key": "th-sb",
+    "lat": "14.9746",
+    "lng": "100.343"
+  },
+  {
+    "name": "Chai Nat",
+    "hc_key": "th-cn",
+    "lat": "15.1055",
+    "lng": "100.013"
+  },
+  {
+    "name": "Bangkok Metropolis",
+    "hc_key": "th-bm",
+    "lat": "13.793",
+    "lng": "100.626"
+  },
+  {
+    "name": "Pathum Thani",
+    "hc_key": "th-pt",
+    "lat": "14.034",
+    "lng": "100.625"
+  },
+  {
+    "name": "Nonthaburi",
+    "hc_key": "th-no",
+    "lat": "13.8933",
+    "lng": "100.407"
+  },
+  {
+    "name": "Samut Prakan",
+    "hc_key": "th-sp",
+    "lat": "13.606",
+    "lng": "100.704"
+  },
+  {
+    "name": "Samut Sakhon",
+    "hc_key": "th-ss",
+    "lat": "13.5655",
+    "lng": "100.225"
+  },
+  {
+    "name": "Samut Songkhram",
+    "hc_key": "th-sm",
+    "lat": "13.4036",
+    "lng": "99.97360000000001"
+  },
+  {
+    "name": "Phetchaburi",
+    "hc_key": "th-pe",
+    "lat": "12.8727",
+    "lng": "99.5964"
+  },
+  {
+    "name": "Chachoengsao",
+    "hc_key": "th-cc",
+    "lat": "13.6342",
+    "lng": "101.419"
+  },
+  {
+    "name": "Nakhon Nayok",
+    "hc_key": "th-nn",
+    "lat": "14.2249",
+    "lng": "101.21"
+  },
+  {
+    "name": "Chon Buri",
+    "hc_key": "th-cb",
+    "lat": "13.2988",
+    "lng": "101.278"
+  },
+  {
+    "name": "Buri Ram",
+    "hc_key": "th-br",
+    "lat": "14.699",
+    "lng": "102.971"
+  },
+  {
+    "name": "Khon Kaen",
+    "hc_key": "th-kk",
+    "lat": "16.5762",
+    "lng": "102.683"
+  },
+  {
+    "name": "Phetchabun",
+    "hc_key": "th-ph",
+    "lat": "16.2589",
+    "lng": "101.21"
+  },
+  {
+    "name": "Kalasin",
+    "hc_key": "th-kl",
+    "lat": "16.6224",
+    "lng": "103.679"
+  },
+  {
+    "name": "Saraburi",
+    "hc_key": "th-sr",
+    "lat": "14.4914",
+    "lng": "100.909"
+  },
+  {
+    "name": "Nakhon Ratchasima",
+    "hc_key": "th-nr",
+    "lat": "14.8923",
+    "lng": "102.103"
+  },
+  {
+    "name": "Si Sa Ket",
+    "hc_key": "th-si",
+    "lat": "14.8248",
+    "lng": "104.418"
+  },
+  {
+    "name": "Roi Et",
+    "hc_key": "th-re",
+    "lat": "15.9601",
+    "lng": "103.827"
+  },
+  {
+    "name": "Loei",
+    "hc_key": "th-le",
+    "lat": "17.4099",
+    "lng": "101.517"
+  },
+  {
+    "name": "Nong Khai",
+    "hc_key": "th-nk",
+    "lat": "17.7553",
+    "lng": "102.754"
+  },
+  {
+    "name": "Amnat Charoen",
+    "hc_key": "th-ac",
+    "lat": "15.8583",
+    "lng": "104.766"
+  },
+  {
+    "name": "Mukdahan",
+    "hc_key": "th-md",
+    "lat": "16.5636",
+    "lng": "104.531"
+  },
+  {
+    "name": "Sakon Nakhon",
+    "hc_key": "th-sn",
+    "lat": "17.3577",
+    "lng": "103.845"
+  },
+  {
+    "name": "Narathiwat",
+    "hc_key": "th-nw",
+    "lat": "6.17758",
+    "lng": "101.727"
+  },
+  {
+    "name": "Pattani",
+    "hc_key": "th-pi",
+    "lat": "6.7391",
+    "lng": "101.381"
+  },
+  {
+    "name": "Ranong",
+    "hc_key": "th-rn",
+    "lat": "9.51717",
+    "lng": "98.58"
+  },
+  {
+    "name": "Nakhon Si Thammarat",
+    "hc_key": "th-nt",
+    "lat": "8.37448",
+    "lng": "99.78189999999999"
+  },
+  {
+    "name": "Songkhla",
+    "hc_key": "th-sg",
+    "lat": "6.81212",
+    "lng": "100.568"
+  },
+  {
+    "name": "Phrae",
+    "hc_key": "th-pr",
+    "lat": "18.0577",
+    "lng": "99.9263"
+  },
+  {
+    "name": "Phayao",
+    "hc_key": "th-py",
+    "lat": "19.1866",
+    "lng": "100.16"
+  },
+  {
+    "name": "Sukhothai",
+    "hc_key": "th-so",
+    "lat": "17.2435",
+    "lng": "99.7009"
+  },
+  {
+    "name": "Uttaradit",
+    "hc_key": "th-ud",
+    "lat": "17.7188",
+    "lng": "100.531"
+  },
+  {
+    "name": "Kanchanaburi",
+    "hc_key": "th-kn",
+    "lat": "14.3317",
+    "lng": "99.29689999999999"
+  },
+  {
+    "name": "Tak",
+    "hc_key": "th-tk",
+    "lat": "17.0043",
+    "lng": "98.8441"
+  },
+  {
+    "name": "Uthai Thani",
+    "hc_key": "th-ut",
+    "lat": "15.27",
+    "lng": "99.5275"
+  },
+  {
+    "name": "Nakhon Sawan",
+    "hc_key": "th-ns",
+    "lat": "15.6943",
+    "lng": "100.25"
+  },
+  {
+    "name": "Prachuap Khiri Khan",
+    "hc_key": "th-pk",
+    "lat": "12.3053",
+    "lng": "99.7274"
+  },
+  {
+    "name": "Ubon Ratchathani",
+    "hc_key": "th-ur",
+    "lat": "15.0137",
+    "lng": "105.016"
+  },
+  {
+    "name": "Sa Kaeo",
+    "hc_key": "th-sk",
+    "lat": "13.8589",
+    "lng": "102.384"
+  },
+  {
+    "name": "Rayong",
+    "hc_key": "th-ry",
+    "lat": "12.8125",
+    "lng": "101.402"
+  },
+  {
+    "name": "Chaiyaphum",
+    "hc_key": "th-cy",
+    "lat": "16.0138",
+    "lng": "101.877"
+  },
+  {
+    "name": "Surin",
+    "hc_key": "th-su",
+    "lat": "14.9355",
+    "lng": "103.588"
+  },
+  {
+    "name": "Nakhon Phanom",
+    "hc_key": "th-nf",
+    "lat": "17.2227",
+    "lng": "104.628"
+  },
+  {
+    "name": "Bueng Kan",
+    "hc_key": "th-bk",
+    "lat": "18.1565",
+    "lng": "103.752"
+  },
+  {
+    "name": "Mae Hong Son",
+    "hc_key": "th-mh",
+    "lat": "18.4043",
+    "lng": "97.89109999999999"
+  },
+  {
+    "name": "Phuket",
+    "hc_key": "th-pu",
+    "lat": "7.97108",
+    "lng": "98.3472"
+  },
+  {
+    "name": "Chumphon",
+    "hc_key": "th-cp",
+    "lat": "10.3809",
+    "lng": "99.07550000000001"
+  },
+  {
+    "name": "Yala",
+    "hc_key": "th-yl",
+    "lat": "6.14264",
+    "lng": "101.218"
+  },
+  {
+    "name": "Chiang Rai",
+    "hc_key": "th-cr",
+    "lat": "19.9607",
+    "lng": "99.9059"
+  },
+  {
+    "name": "Chiang Mai",
+    "hc_key": "th-cm",
+    "lat": "18.8368",
+    "lng": "98.69670000000001"
+  },
+  {
+    "name": "Lamphun",
+    "hc_key": "th-ln",
+    "lat": "18.1333",
+    "lng": "98.9979"
+  },
+  {
+    "name": "Nan",
+    "hc_key": "th-na",
+    "lat": "18.8264",
+    "lng": "100.837"
+  },
+  {
+    "name": "Lampang",
+    "hc_key": "th-lg",
+    "lat": "18.6296",
+    "lng": "99.5707"
+  },
+  {
+    "name": "Prachin Buri",
+    "hc_key": "th-pb",
+    "lat": "14.1081",
+    "lng": "101.594"
+  },
+  {
+    "name": "Ratchaburi",
+    "hc_key": "th-rt",
+    "lat": "13.4964",
+    "lng": "99.61279999999999"
+  },
+  {
+    "name": "Yasothon",
+    "hc_key": "th-ys",
+    "lat": "16.0225",
+    "lng": "104.324"
+  },
+  {
+    "name": "Maha Sarakham",
+    "hc_key": "th-ms",
+    "lat": "15.9151",
+    "lng": "103.188"
+  },
+  {
+    "name": "Udon Thani",
+    "hc_key": "th-un",
+    "lat": "17.4511",
+    "lng": "102.882"
+  },
+  {
+    "name": "Nong Bua Lam Phu",
+    "hc_key": "th-nb",
+    "lat": "17.2392",
+    "lng": "102.311"
+  }
+]

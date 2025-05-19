@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Temburong",
+    "hc_key": "bn-te",
+    "lat": "4.60249",
+    "lng": "115.191"
+  },
+  {
+    "name": "Belait",
+    "hc_key": "bn-be",
+    "lat": "4.45555",
+    "lng": "114.408"
+  },
+  {
+    "name": "Brunei and Muara",
+    "hc_key": "bn-bm",
+    "lat": "4.90214",
+    "lng": "114.92"
+  },
+  {
+    "name": "Tutong",
+    "hc_key": "bn-tu",
+    "lat": "4.64496",
+    "lng": "114.671"
+  }
+]

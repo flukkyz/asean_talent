@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Dili",
+    "hc_key": "tl-dl",
+    "lat": "-8.55429",
+    "lng": "125.668"
+  },
+  {
+    "name": "Ambeno",
+    "hc_key": "tl-am",
+    "lat": "-9.323230000000001",
+    "lng": "124.241"
+  },
+  {
+    "name": "Bobonaro",
+    "hc_key": "tl-bb",
+    "lat": "-8.980729999999999",
+    "lng": "125.219"
+  },
+  {
+    "name": "Cova Lima",
+    "hc_key": "tl-cl",
+    "lat": "-9.30758",
+    "lng": "125.233"
+  },
+  {
+    "name": "Ermera",
+    "hc_key": "tl-er",
+    "lat": "-8.84722",
+    "lng": "125.344"
+  },
+  {
+    "name": "Manatuto",
+    "hc_key": "tl-mt",
+    "lat": "-8.737",
+    "lng": "125.968"
+  },
+  {
+    "name": "Manufahi",
+    "hc_key": "tl-mf",
+    "lat": "-9.004339999999999",
+    "lng": "125.813"
+  },
+  {
+    "name": "Viqueque",
+    "hc_key": "tl-vq",
+    "lat": "-8.8247",
+    "lng": "126.386"
+  },
+  {
+    "name": "Lautem",
+    "hc_key": "tl-bt",
+    "lat": "-8.50164",
+    "lng": "127.001"
+  },
+  {
+    "name": "Liquica",
+    "hc_key": "tl-lq",
+    "lat": "-8.65272",
+    "lng": "125.308"
+  },
+  {
+    "name": "Aileu",
+    "hc_key": "tl-al",
+    "lat": "-8.69661",
+    "lng": "125.619"
+  },
+  {
+    "name": "Ainaro",
+    "hc_key": "tl-an",
+    "lat": "-9.030989999999999",
+    "lng": "125.551"
+  },
+  {
+    "name": "Baucau",
+    "hc_key": "tl-bc",
+    "lat": "-8.537290000000001",
+    "lng": "126.476"
+  }
+]

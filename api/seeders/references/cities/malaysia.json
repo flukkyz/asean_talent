@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Sabah",
+    "hc_key": "my-sa",
+    "lat": "5.31115",
+    "lng": "117.095"
+  },
+  {
+    "name": "Sarawak",
+    "hc_key": "my-sk",
+    "lat": "2.44952",
+    "lng": "113.344"
+  },
+  {
+    "name": "Labuan",
+    "hc_key": "my-la",
+    "lat": "5.32524",
+    "lng": "115.222"
+  },
+  {
+    "name": "Pulau Pinang",
+    "hc_key": "my-pg",
+    "lat": "5.36839",
+    "lng": "100.261"
+  },
+  {
+    "name": "Kedah",
+    "hc_key": "my-kh",
+    "lat": "5.80958",
+    "lng": "100.647"
+  },
+  {
+    "name": "Selangor",
+    "hc_key": "my-sl",
+    "lat": "3.3078",
+    "lng": "101.428"
+  },
+  {
+    "name": "Pahang",
+    "hc_key": "my-ph",
+    "lat": "3.84557",
+    "lng": "102.491"
+  },
+  {
+    "name": "Kuala Lumpur",
+    "hc_key": "my-kl",
+    "lat": "3.13836",
+    "lng": "101.698"
+  },
+  {
+    "name": "Putrajaya",
+    "hc_key": "my-pj",
+    "lat": "2.93814",
+    "lng": "101.706"
+  },
+  {
+    "name": "Perlis",
+    "hc_key": "my-pl",
+    "lat": "6.52169",
+    "lng": "100.253"
+  },
+  {
+    "name": "Johor",
+    "hc_key": "my-jh",
+    "lat": "2.00649",
+    "lng": "103.412"
+  },
+  {
+    "name": "Perak",
+    "hc_key": "my-pk",
+    "lat": "4.74737",
+    "lng": "101.059"
+  },
+  {
+    "name": "Kelantan",
+    "hc_key": "my-kn",
+    "lat": "5.40349",
+    "lng": "102.005"
+  },
+  {
+    "name": "Melaka",
+    "hc_key": "my-me",
+    "lat": "2.32162",
+    "lng": "102.293"
+  },
+  {
+    "name": "Negeri Sembilan",
+    "hc_key": "my-ns",
+    "lat": "2.70857",
+    "lng": "102.149"
+  },
+  {
+    "name": "Terengganu",
+    "hc_key": "my-te",
+    "lat": "4.94214",
+    "lng": "103.013"
+  }
+]

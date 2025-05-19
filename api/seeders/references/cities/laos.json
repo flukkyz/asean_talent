@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Oudômxai",
+    "hc_key": "la-ou",
+    "lat": "20.161",
+    "lng": "101.548"
+  },
+  {
+    "name": "Phôngsali",
+    "hc_key": "la-ph",
+    "lat": "21.6153",
+    "lng": "102.245"
+  },
+  {
+    "name": "Bolikhamxai",
+    "hc_key": "la-bl",
+    "lat": "18.538",
+    "lng": "104.039"
+  },
+  {
+    "name": "Khammouan",
+    "hc_key": "la-kh",
+    "lat": "17.6151",
+    "lng": "105.343"
+  },
+  {
+    "name": "Attapu",
+    "hc_key": "la-at",
+    "lat": "14.7848",
+    "lng": "106.866"
+  },
+  {
+    "name": "Bokeo",
+    "hc_key": "la-bk",
+    "lat": "20.3044",
+    "lng": "100.672"
+  },
+  {
+    "name": "Xékong",
+    "hc_key": "la-xe",
+    "lat": "15.6414",
+    "lng": "106.982"
+  },
+  {
+    "name": "Louang Namtha",
+    "hc_key": "la-lm",
+    "lat": "20.9099",
+    "lng": "101.148"
+  },
+  {
+    "name": "Xaignabouri",
+    "hc_key": "la-xa",
+    "lat": "17.7502",
+    "lng": "101.143"
+  },
+  {
+    "name": "Champasak",
+    "hc_key": "la-ch",
+    "lat": "14.1093",
+    "lng": "106.003"
+  },
+  {
+    "name": "Saravan",
+    "hc_key": "la-sl",
+    "lat": "15.7614",
+    "lng": "106.248"
+  },
+  {
+    "name": "Savannakhét",
+    "hc_key": "la-sv",
+    "lat": "16.4937",
+    "lng": "105.771"
+  },
+  {
+    "name": "Vientiane [prefecture]",
+    "hc_key": "la-vt",
+    "lat": "18.103",
+    "lng": "102.563"
+  },
+  {
+    "name": "Vientiane",
+    "hc_key": "la-vi",
+    "lat": "18.9186",
+    "lng": "102.156"
+  },
+  {
+    "name": "Xiangkhoang",
+    "hc_key": "la-xi",
+    "lat": "19.5113",
+    "lng": "103.46"
+  },
+  {
+    "name": "Houaphan",
+    "hc_key": "la-ho",
+    "lat": "20.3729",
+    "lng": "104.039"
+  },
+  {
+    "name": "Louangphrabang",
+    "hc_key": "la-lp",
+    "lat": "20.0788",
+    "lng": "102.549"
+  }
+]

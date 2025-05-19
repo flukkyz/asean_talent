@@ -1,0 +1,66 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+$body-font-family: 'Roboto';
+$heading-font-family: 'Roboto';
+
+$pdf-font-family: 'Sarabun';
+
+$font-size-root: 18px;
+$input-font-size: 18px; 
+
+$progress-circular-overlay-transition: all .1s linear !default;
+
+.v-application {
+  font-family: $body-font-family, sans-serif !important;
+  .display-4,
+  .display-3,
+  .display-2,
+  .display-1,
+  .headline,
+  .title,
+  .subtitle-1,
+  .subtitle-2,
+  .body-1,
+  .body-2,
+  .caption,
+  .overline{
+    font-family: $body-font-family, sans-serif !important;
+  }
+}
+
+
+$navigation-drawer-border-width: 0px;
+$navigation-drawer-mobile-temporary-elevation: 0px;
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 5px lightgrey;
+  background: rgba(255,255,255, 0.1);
+  border-top-left-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  // box-shadow: inset 0 0 5px lightgrey;
+  background: rgba(255,255,255, 0.1);
+  border-bottom-right-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 16px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.8);
+}

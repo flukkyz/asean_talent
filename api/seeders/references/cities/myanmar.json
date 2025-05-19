@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Tanintharyi",
+    "hc_key": "mm-tn",
+    "lat": "13.6116",
+    "lng": "98.77460000000001"
+  },
+  {
+    "name": "Mon",
+    "hc_key": "mm-mo",
+    "lat": "16.3045",
+    "lng": "97.8062"
+  },
+  {
+    "name": "Rakhine",
+    "hc_key": "mm-ra",
+    "lat": "20.2747",
+    "lng": "93.6396"
+  },
+  {
+    "name": "Ayeyarwady",
+    "hc_key": "mm-ay",
+    "lat": "16.7457",
+    "lng": "95.1083"
+  },
+  {
+    "name": "Chin",
+    "hc_key": "mm-ch",
+    "lat": "21.9262",
+    "lng": "93.3727"
+  },
+  {
+    "name": "Magway",
+    "hc_key": "mm-mg",
+    "lat": "19.6473",
+    "lng": "94.8807"
+  },
+  {
+    "name": "Shan",
+    "hc_key": "mm-sh",
+    "lat": "21.5185",
+    "lng": "98.1593"
+  },
+  {
+    "name": "Kayah",
+    "hc_key": "mm-kh",
+    "lat": "19.2658",
+    "lng": "97.3526"
+  },
+  {
+    "name": "Kayin",
+    "hc_key": "mm-kn",
+    "lat": "17.3996",
+    "lng": "97.651"
+  },
+  {
+    "name": "Kachin",
+    "hc_key": "mm-kc",
+    "lat": "25.7926",
+    "lng": "97.2978"
+  },
+  {
+    "name": "Sagaing",
+    "hc_key": "mm-sa",
+    "lat": "23.7031",
+    "lng": "95.18210000000001"
+  },
+  {
+    "name": "Bago",
+    "hc_key": "mm-ba",
+    "lat": "18.518",
+    "lng": "96.1485"
+  },
+  {
+    "name": "Mandalay",
+    "hc_key": "mm-md",
+    "lat": "20.6284",
+    "lng": "96.06140000000001"
+  },
+  {
+    "name": "Yangon",
+    "hc_key": "mm-ya",
+    "lat": "17.1117",
+    "lng": "96.111"
+  }
+]

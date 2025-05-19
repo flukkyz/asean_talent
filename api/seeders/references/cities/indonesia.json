@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Aceh",
+    "hc_key": "id-ac",
+    "lat": "4.41533",
+    "lng": "96.9956"
+  },
+  {
+    "name": "Jawa Tengah",
+    "hc_key": "id-jt",
+    "lat": "-7.2901",
+    "lng": "109.896"
+  },
+  {
+    "name": "Bengkulu",
+    "hc_key": "id-be",
+    "lat": "-3.48606",
+    "lng": "102.368"
+  },
+  {
+    "name": "Banten",
+    "hc_key": "id-bt",
+    "lat": "-6.25794",
+    "lng": "106.167"
+  },
+  {
+    "name": "Kalimantan Barat",
+    "hc_key": "id-kb",
+    "lat": "-0.063647",
+    "lng": "111.304"
+  },
+  {
+    "name": "Bangka-Belitung",
+    "hc_key": "id-bb",
+    "lat": "-2.95817",
+    "lng": "106.819"
+  },
+  {
+    "name": "Bali",
+    "hc_key": "id-ba",
+    "lat": "-8.341200000000001",
+    "lng": "115.179"
+  },
+  {
+    "name": "Jawa Timur",
+    "hc_key": "id-ji",
+    "lat": "-7.88129",
+    "lng": "112.616"
+  },
+  {
+    "name": "Kalimantan Selatan",
+    "hc_key": "id-ks",
+    "lat": "-3.00713",
+    "lng": "115.451"
+  },
+  {
+    "name": "Nusa Tenggara Timur",
+    "hc_key": "id-nt",
+    "lat": "-8.584429999999999",
+    "lng": "120.689"
+  },
+  {
+    "name": "Sulawesi Selatan",
+    "hc_key": "id-se",
+    "lat": "-3.7444",
+    "lng": "119.99"
+  },
+  {
+    "name": "Kepulauan Riau",
+    "hc_key": "id-kr",
+    "lat": "-0.142639",
+    "lng": "104.601"
+  },
+  {
+    "name": "Irian Jaya Barat",
+    "hc_key": "id-ib",
+    "lat": "-1.32525",
+    "lng": "132.825"
+  },
+  {
+    "name": "Sumatera Utara",
+    "hc_key": "id-su",
+    "lat": "2.36304",
+    "lng": "99.2161"
+  },
+  {
+    "name": "Riau",
+    "hc_key": "id-ri",
+    "lat": "0.396892",
+    "lng": "101.745"
+  },
+  {
+    "name": "Sulawesi Utara",
+    "hc_key": "id-sw",
+    "lat": "0.853039",
+    "lng": "124.446"
+  },
+  {
+    "name": "Kalimantan Utara",
+    "hc_key": "id-ku",
+    "lat": "1.28915",
+    "lng": "116.354"
+  },
+  {
+    "name": "Maluku Utara",
+    "hc_key": "id-la",
+    "lat": "-2.28945",
+    "lng": "125.976"
+  },
+  {
+    "name": "Sumatera Barat",
+    "hc_key": "id-sb",
+    "lat": "-0.642611",
+    "lng": "100.611"
+  },
+  {
+    "name": "Maluku",
+    "hc_key": "id-ma",
+    "lat": "-8.248139999999999",
+    "lng": "128.161"
+  },
+  {
+    "name": "Nusa Tenggara Barat",
+    "hc_key": "id-nb",
+    "lat": "-8.571059999999999",
+    "lng": "116.294"
+  },
+  {
+    "name": "Sulawesi Tenggara",
+    "hc_key": "id-sg",
+    "lat": "-4.0746",
+    "lng": "122.119"
+  },
+  {
+    "name": "Sulawesi Tengah",
+    "hc_key": "id-st",
+    "lat": "-1.30097",
+    "lng": "120.153"
+  },
+  {
+    "name": "Papua",
+    "hc_key": "id-pa",
+    "lat": "-4.10825",
+    "lng": "138.689"
+  },
+  {
+    "name": "Jawa Barat",
+    "hc_key": "id-jr",
+    "lat": "-6.90763",
+    "lng": "107.638"
+  },
+  {
+    "name": "Kalimantan Timur",
+    "hc_key": "id-ki",
+    "lat": "1.28915",
+    "lng": "116.354"
+  },
+  {
+    "name": "Lampung",
+    "hc_key": "id-1024",
+    "lat": "-4.919",
+    "lng": "105.059"
+  },
+  {
+    "name": "Jakarta Raya",
+    "hc_key": "id-jk",
+    "lat": "-6.22462",
+    "lng": "106.837"
+  },
+  {
+    "name": "Gorontalo",
+    "hc_key": "id-go",
+    "lat": "0.760501",
+    "lng": "122.331"
+  },
+  {
+    "name": "Yogyakarta",
+    "hc_key": "id-yo",
+    "lat": "-7.83533",
+    "lng": "110.443"
+  },
+  {
+    "name": "Sumatera Selatan",
+    "hc_key": "id-sl",
+    "lat": "-3.3824",
+    "lng": "104.073"
+  },
+  {
+    "name": "Sulawesi Barat",
+    "hc_key": "id-sr",
+    "lat": "-2.69615",
+    "lng": "119.316"
+  },
+  {
+    "name": "Jambi",
+    "hc_key": "id-ja",
+    "lat": "-1.65497",
+    "lng": "102.823"
+  },
+  {
+    "name": "Kalimantan Tengah",
+    "hc_key": "id-kt",
+    "lat": "-1.84217",
+    "lng": "113.286"
+  }
+]
