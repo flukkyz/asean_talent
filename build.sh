@@ -15,7 +15,7 @@ if [ $ACTION = "pull" ]; then
   echo "Enter your bitbucket password: "
   read PASSWORD
   stty echo
-  git pull https://flukkyz:$PASSWORD@github.com/flukkyz/thailand_talent.git
+  git pull https://flukkyz:$PASSWORD@github.com/flukkyz/asean_talent.git
   if [ $? -eq 0 ]; then
     IMAGE_ID=$(docker image ls --filter=reference="flukkyz/nuxt:asean" --format "{{.ID}}")
     if [ -z "$IMAGE_ID" ]; then
