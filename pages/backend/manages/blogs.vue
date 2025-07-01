@@ -19,6 +19,20 @@
               </v-icon>
               Create
             </v-btn>
+            <v-btn
+              v-if="listDatas.totalItems > 0"
+              outlined
+              small
+              color="primary"
+              :loading="disabledExport"
+              :disabled="disabledExport"
+              @click="exportExcel"
+            >
+              <v-icon small class="mr-2">
+                fas fa-file-excel
+              </v-icon>
+              Download Traffic Statistics
+            </v-btn>
           </v-card-title>
           <v-card-title class="pt-0">
             <v-text-field
@@ -189,6 +203,7 @@ export default {
       api: `${process.env.apiUrl}${process.env.apiDirectory}blogs`,
       modelName: 'News & Activity',
       listDatas: null,
+      disabledExport: false,
       queryParams: {
         size: 20,
         q: '',
@@ -335,6 +350,32 @@ export default {
         this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })
       }
       this.$overlay.hide()
+    },
+    async exportExcel () {
+      this.disabledExport = true
+      const searchParams = new URLSearchParams({
+        ...this.queryParams,
+        size: this.listDatas.totalItems,
+        page: 1
+      }).toString()
+      try {
+        const datas = await this.$axios.$get(`${this.api}${(searchParams ? '?' + searchParams : '')}`)
+        const dataWS = this.$xlsx.utils.json_to_sheet(datas.rows.map((ele) => {
+          return {
+            Title: ele.title,
+            Viewer: ele.hit,
+            'Created At': ele.createdAt
+          }
+        }))
+        const wb = this.$xlsx.utils.book_new()
+        this.$xlsx.utils.book_append_sheet(wb, dataWS)
+        this.$xlsx.writeFile(wb, 'news-activities-traffic-statistics-' + new Date().getTime() + '.xlsx')
+      } catch (e) {
+        console.log(e)
+        this.$nuxt.error({ statusCode: e.response.status, message: e.response.data.message })
+      } finally {
+        this.disabledExport = false
+      }
     }
   }
 }
