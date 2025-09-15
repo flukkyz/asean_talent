@@ -669,10 +669,11 @@ export default {
     },
     onAddImages (files) {
       for (const file of files) {
-        const findIndex = this.$_.findIndex(this.listDatas, { logo: file.name })
-        if (findIndex !== -1) {
-          this.listDatas[findIndex].imgPreview = URL.createObjectURL(file)
-          this.listDatas[findIndex].file = file
+        for (const data of this.listDatas) {
+          if(data.logo === file.name) {
+            data.imgPreview = URL.createObjectURL(file)
+            data.file = file
+          }
         }
       }
       this.$overlay.hide()
