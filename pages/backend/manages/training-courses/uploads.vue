@@ -574,7 +574,7 @@ export default {
     onAddImages (files) {
       for (const file of files) {
         for (const data of this.listDatas) {
-          if(data.logo === file.name) {
+          if (data.logo === file.name) {
             data.imgPreview = URL.createObjectURL(file)
             data.file = file
           }
