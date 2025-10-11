@@ -5,7 +5,7 @@
         <h1 :class="['font-weight-bold themeAccent--text',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'headline my-6' : 'display-1']">
           Young Talent Pool
         </h1>
-        <img src="/images/search.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 152 : 196">
+        <img src="/images/ui/search.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 152 : 196">
       </v-container>
     </div>
     <v-container class="py-16" :class="{ 'px-16': ['sm', 'xs'].includes($vuetify.breakpoint.name)}">
@@ -325,7 +325,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top.png");
+  background-image: url("/images/ui/bg-top.png");
   background-color: #cccccc;
   background-position: top;
   background-repeat: no-repeat;

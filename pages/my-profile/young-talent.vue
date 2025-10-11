@@ -102,7 +102,7 @@
                   <v-tooltip top>
                     <template #activator="{ on, attrs }">
                       <img
-                        src="/images/rg.png"
+                        src="/images/ui/rg.png"
                         height="33"
                         v-bind="attrs"
                         class="mr-3"
@@ -132,7 +132,7 @@
                   <v-tooltip top>
                     <template #activator="{ on, attrs }">
                       <img
-                        src="/images/tnrr.png"
+                        src="/images/ui/tnrr.png"
                         height="33"
                         v-bind="attrs"
                         class="mr-3"

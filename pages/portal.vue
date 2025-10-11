@@ -15,7 +15,7 @@
               <div class="d-flex align-center ml-3">
                 <img src="/images/logo.png" :height="['xl', 'lg'].includes($vuetify.breakpoint.name) ? '52' : '40'" contain alt="Logo">
                 <p class="mb-0 ml-5" :class="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'white--text' : 'display-1 themeAccent--text'">
-                  ASEAN Talent Mobility
+                  {{ appName }}
                 </p>
               </div>
             </v-toolbar-title>
@@ -39,7 +39,7 @@
             Come and be a part of the ASEAN community.
           </h3>
           <p class="">
-            The ASEAN Talent Mobility (ATM) Community is designed to be a community for resilient, inclusive, and sustainable professional talent in ASEAN to support economic growth. The ATM Community is facilitated by the ASEAN Expert Group on Talent Mobility (EGTM), endorsed by SCIRD. Talent mobility and talent capacity building are significant initiatives for ATM to promote brain circulation in ASEAN and to be a solution provider for the development of ASEAN. The ATM aims to facilitate the mobility of professional talent across the ASEAN region to support economic growth driven by science, technology, and innovation (STI). Join the ASEAN Talent Mobility (ATM) Community today and become part of a dynamic network of professional talent driving inclusive and sustainable growth through science, technology, and innovation across the ASEAN region.
+            The {{ appName }} Community is designed to be a community for resilient, inclusive, and sustainable professional talent in ASEAN to support economic growth. The ATM Community is facilitated by the ASEAN Expert Group on Talent Mobility (EGTM), endorsed by SCIRD. Talent mobility and talent capacity building are significant initiatives for ATM to promote brain circulation in ASEAN and to be a solution provider for the development of ASEAN. The ATM aims to facilitate the mobility of professional talent across the ASEAN region to support economic growth driven by science, technology, and innovation (STI). Join the {{ appName }} Community today and become part of a dynamic network of professional talent driving inclusive and sustainable growth through science, technology, and innovation across the ASEAN region.
           </p>
           <div v-if="listDatas">
             <div v-if="listDatas.totalItems > 0" class="py-8">
@@ -104,7 +104,8 @@ export default {
       pageName: 'Portal',
       basePath: `${process.env.baseUrl}${this.$route.fullPath}`,
       api: `${process.env.apiUrl}${process.env.apiDirectory}portals`,
-      listDatas: null
+      listDatas: null,
+      appName: process.env.appName
     }
   },
 

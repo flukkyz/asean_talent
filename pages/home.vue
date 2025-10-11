@@ -1,190 +1,191 @@
 <template>
-  <div class="">
-    <div class="bg-header">
-      <v-container class="d-flex align-center py-10" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : 'justify-space-around'">
-        <div :class="['xl', 'lg','md'].includes($vuetify.breakpoint.name) ? '' : 'mx-5'" style="max-width: 530px;">
-          <h1 class="display-2 themeAccent--text font-weight-bold mb-6">
-            ASEAN Talent Pool
-          </h1>
-          <p class="mb-6">
-            Establishing a collaborative network and global partnership fund at the ASEAN level is a key strategy to foster cooperation between researchers and research institutions for development.
-          </p>
-          <div style="max-width: 440px;" class="mb-4">
-            <v-form @submit.prevent="onSearch">
-              <v-text-field
-                v-model="search"
-                append-icon="mdi-magnify"
-                :placeholder="`Search your Keyword`"
-                hide-details
-                class="rounded-lg"
-                dense
-                outlined
-                @focus="focusSearch = true"
-                @blur="focusSearch = false"
-              >
-                <template #append>
-                  <div class="h-100">
-                    <v-icon style="cursor: pointer;" @click="onSearch">
-                      mdi-magnify
-                    </v-icon>
-                  </div>
-                </template>
-              </v-text-field>
-            </v-form>
-          </div>
-          <p class="mb-2">
-            Trending searches
-          </p>
-          <v-chip
-            v-for="(popular) in listPopulars"
-            :key="`popular-${popular.id}`"
-            :to="localePath({ name: 'asean-talent-pool', query: { q: popular.keyword } })"
-            color="primary"
-            outlined
-            small
-            class="mr-3 mb-3"
-            label
-          >
-            {{ popular.keyword }}
-          </v-chip>
-        </div>
-        <div :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'order-first mb-16 mx-10' : ''">
-          <img
-            src="/images/home.png"
-          >
-        </div>
-      </v-container>
-      <v-container class="d-flex flex-wrap align-center justify-center pb-10">
-        <div class="d-flex align-center flex-column themeAccent--text  mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
-          <v-img src="/images/talents.png" width="80" height="80" contain />
-          <h1 class="display-1 mt-3 font-weight-bold">
-            {{ $currencyText(countTalents) }}
-          </h1>
-          <p class="title mb-0">
-            Talents
-          </p>
-        </div>
-        <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
-          <v-img src="/images/keywords.png" width="80" height="80" contain />
-          <h1 class="display-1 mt-3 font-weight-bold">
-            {{ $currencyText(countKeywords) }}
-          </h1>
-          <p class="title mb-0">
-            Keywords
-          </p>
-        </div>
-        <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
-          <v-img src="/images/countries.png" width="80" height="80" contain />
-          <h1 class="display-1 mt-3 font-weight-bold">
-            {{ $currencyText(countCountries) }}
-          </h1>
-          <p class="title mb-0">
-            Countries
-          </p>
-        </div>
-        <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
-          <v-img src="/images/industries.png" width="80" height="80" contain />
-          <h1 class="display-1 mt-3 font-weight-bold">
-            {{ $currencyText(countIndustries) }}
-          </h1>
-          <p class="title mb-0">
-            Industries
-          </p>
-        </div>
-      </v-container>
-    </div>
-    <client-only v-if="setting">
-      <div v-if="listBlogs && listBlogs.length > 0 && setting.show_home_blog" class="py-16">
-        <v-container :class="{ 'px-16 text-center': ['sm', 'xs'].includes($vuetify.breakpoint.name)}">
-          <h1 class="headline font-weight-bold mb-8 themeAccent--text text-center">
-            {{ $t('NEWS_AND_ACTIVITIES') }}
-          </h1>
-          <v-row
-            class="my-8"
-            align="center"
-            justify="center"
-          >
-            <v-col
-              v-for="blog in listBlogs"
-              :key="blog.id"
-              cols="12"
+  <client-only v-if="setting">
+    <div class="">
+      <div class="bg-header">
+        <v-container class="d-flex align-center py-10" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : 'justify-space-around'">
+          <div :class="['xl', 'lg','md'].includes($vuetify.breakpoint.name) ? '' : 'mx-5'" style="max-width: 530px;">
+            <h1 class="display-2 themeAccent--text font-weight-bold mb-6">
+              {{ setting.home_header_title || 'ASEAN Talent Pool' }}
+            </h1>
+            <p class="mb-6">
+              {{ setting.home_header_detail}}
+            </p>
+            <div style="max-width: 440px;" class="mb-4">
+              <v-form @submit.prevent="onSearch">
+                <v-text-field
+                  v-model="search"
+                  append-icon="mdi-magnify"
+                  :placeholder="`Search your Keyword`"
+                  hide-details
+                  class="rounded-lg"
+                  dense
+                  outlined
+                  @focus="focusSearch = true"
+                  @blur="focusSearch = false"
+                >
+                  <template #append>
+                    <div class="h-100">
+                      <v-icon style="cursor: pointer;" @click="onSearch">
+                        mdi-magnify
+                      </v-icon>
+                    </div>
+                  </template>
+                </v-text-field>
+              </v-form>
+            </div>
+            <p v-if="listPopulars && listPopulars.length > 0" class="mb-2">
+              Trending searches
+            </p>
+            <v-chip
+              v-for="(popular) in listPopulars"
+              :key="`popular-${popular.id}`"
+              :to="localePath({ name: 'asean-talent-pool', query: { q: popular.keyword } })"
+              color="primary"
+              outlined
+              small
+              class="mr-3 mb-3"
+              label
             >
-              <cards-blog
-                :item="blog"
-              />
-            </v-col>
-          </v-row>
-          <div class="text-right">
-            <v-btn text color="info" large :to="localePath({name: 'blogs'})">
-              View more
-              <v-icon color="info" right>
-                fas fa-chevron-right
-              </v-icon>
-            </v-btn>
+              {{ popular.keyword }}
+            </v-chip>
+          </div>
+          <div :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'order-first mb-16 mx-10' : ''">
+            <img
+              src="/images/graphics/1.png"
+            >
+          </div>
+        </v-container>
+        <v-container class="d-flex flex-wrap align-center justify-center pb-10">
+          <div class="d-flex align-center flex-column themeAccent--text  mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
+            <v-img src="/images/ui/talents.png" width="80" height="80" contain />
+            <h1 class="display-1 mt-3 font-weight-bold">
+              {{ $currencyText(countTalents) }}
+            </h1>
+            <p class="title mb-0">
+              Talents
+            </p>
+          </div>
+          <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
+            <v-img src="/images/ui/keywords.png" width="80" height="80" contain />
+            <h1 class="display-1 mt-3 font-weight-bold">
+              {{ $currencyText(countKeywords) }}
+            </h1>
+            <p class="title mb-0">
+              Keywords
+            </p>
+          </div>
+          <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
+            <v-img src="/images/ui/countries.png" width="80" height="80" contain />
+            <h1 class="display-1 mt-3 font-weight-bold">
+              {{ $currencyText(countCountries) }}
+            </h1>
+            <p class="title mb-0">
+              Countries
+            </p>
+          </div>
+          <div class="d-flex align-center flex-column themeAccent--text mb-5" :class="['md','sm'].includes($vuetify.breakpoint.name) ? 'mx-6' : 'mx-16'">
+            <v-img src="/images/ui/industries.png" width="80" height="80" contain />
+            <h1 class="display-1 mt-3 font-weight-bold">
+              {{ $currencyText(countIndustries) }}
+            </h1>
+            <p class="title mb-0">
+              Industries
+            </p>
           </div>
         </v-container>
       </div>
-      <div v-if="setting.show_home_pool" class="pb-16">
-        <v-divider class="pt-16" />
-        <v-container class="">
-          <!-- <div v-if="aseanTalentsByCountriesAndIndustries" class="pb-16 mb-16">
-          <p class="headline font-weight-bold mb-8 themeAccent--text text-center">
-            ASEAN Talents by country and industry
-          </p>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <thead>
-              <tr>
-                <th width="25%">
-                  &nbsp;
-                </th>
-                <th v-for="(industry,i) in industries" :key="`talents-by-countries-and-industries-industry-${i}`" :class="['text-right',['xs'].includes($vuetify.breakpoint.name) ? '' : 'px-2']" width="15%">
-                  <v-tooltip top>
-                    <template #activator="{ on, attrs }">
-                      <v-img
-                        v-bind="attrs"
-                        :src="`/images/industries/icons/${industry.name}.png`"
-                        :height="['xs','sm'].includes($vuetify.breakpoint.name) ? 35 : 40"
-                        :width="['xs','sm'].includes($vuetify.breakpoint.name) ? 35 : 40"
-                        contain
-                        class="ml-auto"
-                        v-on="on"
-                      />
-                    </template>
-                    <span>{{ industry.name }}</span>
-                  </v-tooltip>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(country, i) in aseanCountries" :key="`talents-by-countries-and-industries-country-${i}`" :class="i%2===0 ? 'grey lighten-4' : ''">
-                <td :class="['pt-2',['xs'].includes($vuetify.breakpoint.name) ? 'px-1' : 'pl-5 pr-3']">
-                  <v-tooltip top>
-                    <template #activator="{ on, attrs }">
-                      <img
-                        :src="`https://flagsapi.com/${aseanTalentsByCountriesAndIndustries[country].iso2}/flat/64.png`"
-                        v-bind="attrs"
-                        v-on="on"
-                      >
-                    </template>
-                    <span>{{ country }}</span>
-                  </v-tooltip>
-                </td>
-                <td v-for="(industry,j) in industries" :key="`talents-by-countries-and-industries-data-${i}-${j}`" :class="['text-right',['xs'].includes($vuetify.breakpoint.name) ? 'px-2' : 'pl-3 pr-5']">
-                  <template v-if="aseanTalentsByCountriesAndIndustries[country][industry.name]">
-                    <nuxt-link :to="localePath({ name: 'dashboard-slug', params: { slug: country }, query: { industry: industry.name } })">
-                      <span class="font-weight-bold themeAccent--text">
-                        {{ $currencyText(aseanTalentsByCountriesAndIndustries[country][industry.name]) }}
-                      </span>
-                    </nuxt-link>
-                  </template>
-                  <span v-else>-</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
 
-          <p class="headline font-weight-bold mb-8 themeAccent--text text-center">
+        <div v-if="listBlogs && listBlogs.length > 0 && setting.show_home_blog" class="py-16">
+          <v-container :class="{ 'px-16 text-center': ['sm', 'xs'].includes($vuetify.breakpoint.name)}">
+            <h1 class="headline font-weight-bold mb-8 themeAccent--text text-center">
+              {{ $t('NEWS_AND_ACTIVITIES') }}
+            </h1>
+            <v-row
+              class="my-8"
+              align="center"
+              justify="center"
+            >
+              <v-col
+                v-for="blog in listBlogs"
+                :key="blog.id"
+                cols="12"
+              >
+                <cards-blog
+                  :item="blog"
+                />
+              </v-col>
+            </v-row>
+            <div class="text-right">
+              <v-btn text color="info" large :to="localePath({name: 'blogs'})">
+                View more
+                <v-icon color="info" right>
+                  fas fa-chevron-right
+                </v-icon>
+              </v-btn>
+            </div>
+          </v-container>
+        </div>
+        <div v-if="setting.show_home_pool && industries && industries.length > 0" class="pb-16">
+          <v-divider class="pt-16" />
+          <v-container class="">
+            <!-- <div v-if="aseanTalentsByCountriesAndIndustries" class="pb-16 mb-16">
+            <p class="headline font-weight-bold mb-8 themeAccent--text text-center">
+              ASEAN Talents by country and industry
+            </p>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <th width="25%">
+                    &nbsp;
+                  </th>
+                  <th v-for="(industry,i) in industries" :key="`talents-by-countries-and-industries-industry-${i}`" :class="['text-right',['xs'].includes($vuetify.breakpoint.name) ? '' : 'px-2']" width="15%">
+                    <v-tooltip top>
+                      <template #activator="{ on, attrs }">
+                        <v-img
+                          v-bind="attrs"
+                          :src="`/images/industries/icons/${industry.name}.png`"
+                          :height="['xs','sm'].includes($vuetify.breakpoint.name) ? 35 : 40"
+                          :width="['xs','sm'].includes($vuetify.breakpoint.name) ? 35 : 40"
+                          contain
+                          class="ml-auto"
+                          v-on="on"
+                        />
+                      </template>
+                      <span>{{ industry.name }}</span>
+                    </v-tooltip>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(country, i) in aseanCountries" :key="`talents-by-countries-and-industries-country-${i}`" :class="i%2===0 ? 'grey lighten-4' : ''">
+                  <td :class="['pt-2',['xs'].includes($vuetify.breakpoint.name) ? 'px-1' : 'pl-5 pr-3']">
+                    <v-tooltip top>
+                      <template #activator="{ on, attrs }">
+                        <img
+                          :src="`https://flagsapi.com/${aseanTalentsByCountriesAndIndustries[country].iso2}/flat/64.png`"
+                          v-bind="attrs"
+                          v-on="on"
+                        >
+                      </template>
+                      <span>{{ country }}</span>
+                    </v-tooltip>
+                  </td>
+                  <td v-for="(industry,j) in industries" :key="`talents-by-countries-and-industries-data-${i}-${j}`" :class="['text-right',['xs'].includes($vuetify.breakpoint.name) ? 'px-2' : 'pl-3 pr-5']">
+                    <template v-if="aseanTalentsByCountriesAndIndustries[country][industry.name]">
+                      <nuxt-link :to="localePath({ name: 'dashboard-slug', params: { slug: country }, query: { industry: industry.name } })">
+                        <span class="font-weight-bold themeAccent--text">
+                          {{ $currencyText(aseanTalentsByCountriesAndIndustries[country][industry.name]) }}
+                        </span>
+                      </nuxt-link>
+                    </template>
+                    <span v-else>-</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+
+          <p v-if="industries && industries.length > 0" class="headline font-weight-bold mb-8 themeAccent--text text-center">
             ASEAN Talent Pool by Keywords
           </p>
           <v-slide-group
@@ -279,113 +280,113 @@
           </v-expand-transition>
         </v-container>
       </div>
-    </client-only>
-    <!-- <v-container v-if="slides && slides.length> 0" class="mt-8">
-      <v-row>
-        <v-col cols="12" lg="8" class="pr-0 pt-0">
-          <v-carousel
-            hide-delimiter-background
-            :show-arrows="false"
-            :hide-delimiters="slides.length < 2"
-            :show-arrows-on-hover="slides.length> 1"
-            :height="slideSizes[$vuetify.breakpoint.name]"
-            width="100%"
-            cycle
-          >
-            <template v-for="slide in slides">
-              <a
-                v-if="slide.link"
-                :key="`slide-${slide.id}`"
-                :href="slide.link"
-                target="_blank"
-              >
-                <v-carousel-item>
-                  <v-img :src="slide.Img.url" />
+      <!-- <v-container v-if="slides && slides.length> 0" class="mt-8">
+        <v-row>
+          <v-col cols="12" lg="8" class="pr-0 pt-0">
+            <v-carousel
+              hide-delimiter-background
+              :show-arrows="false"
+              :hide-delimiters="slides.length < 2"
+              :show-arrows-on-hover="slides.length> 1"
+              :height="slideSizes[$vuetify.breakpoint.name]"
+              width="100%"
+              cycle
+            >
+              <template v-for="slide in slides">
+                <a
+                  v-if="slide.link"
+                  :key="`slide-${slide.id}`"
+                  :href="slide.link"
+                  target="_blank"
+                >
+                  <v-carousel-item>
+                    <v-img :src="slide.Img.url" />
 
+                  </v-carousel-item>
+                </a>
+                <v-carousel-item
+                  v-else
+                  :key="`slide-${slide.id}`"
+                >
+                  <v-img :src="slide.Img.url" />
                 </v-carousel-item>
-              </a>
-              <v-carousel-item
-                v-else
-                :key="`slide-${slide.id}`"
-              >
-                <v-img :src="slide.Img.url" />
-              </v-carousel-item>
-            </template>
-          </v-carousel>
-        </v-col>
-        <v-col v-if="banners && banners.length> 0" cols="12" lg="4">
-          <v-row>
-            <v-col cols="12" sm="6" lg="12" class="pt-0">
-              <a
-                v-if="banners[0].link"
-                :href="banners[0].link"
-                target="_blank"
-              >
+              </template>
+            </v-carousel>
+          </v-col>
+          <v-col v-if="banners && banners.length> 0" cols="12" lg="4">
+            <v-row>
+              <v-col cols="12" sm="6" lg="12" class="pt-0">
+                <a
+                  v-if="banners[0].link"
+                  :href="banners[0].link"
+                  target="_blank"
+                >
+                  <v-img
+                    :src="banners[0].Img.url"
+                  />
+                </a>
                 <v-img
+                  v-else
                   :src="banners[0].Img.url"
                 />
-              </a>
-              <v-img
-                v-else
-                :src="banners[0].Img.url"
-              />
-            </v-col>
-            <v-col cols="12" sm="6" lg="12" class="pt-0">
-              <a
-                v-if="banners[1].link"
-                :href="banners[1].link"
-                target="_blank"
-              >
+              </v-col>
+              <v-col cols="12" sm="6" lg="12" class="pt-0">
+                <a
+                  v-if="banners[1].link"
+                  :href="banners[1].link"
+                  target="_blank"
+                >
+                  <v-img
+                    class="mt-5"
+                    :src="banners[1].Img.url"
+                  />
+                </a>
                 <v-img
-                  class="mt-5"
+                  v-else
                   :src="banners[1].Img.url"
                 />
-              </a>
-              <v-img
-                v-else
-                :src="banners[1].Img.url"
-              />
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container> -->
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container> -->
 
-    <div class="partner-section">
-      <v-container>
-        <div class="d-flex flex-wrap w-100 pt-12 pb-4" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column align-center' : 'justify-space-around align-start'">
-          <div class="mb-10">
-            <p class="themeAccent--text title">
-              Support by
-            </p>
-            <div v-if="supports" class="d-flex align-center flex-wrap" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : ''">
-              <a v-for="item in supports" :key="`support-${item.id}`" :href="item.url" target="_blank">
-                <img
-                  :src="item.Img ? item.Img.url : '/images/icon.png'"
-                  :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'mb-8' : 'mr-8'"
-                  height="52"
-                >
-              </a>
+      <div v-if="(supports && supports.length > 0) || (manages && manages.length > 0)" class="partner-section">
+        <v-container>
+          <div class="d-flex flex-wrap w-100 pt-12 pb-4" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column align-center' : 'justify-space-around align-start'">
+            <div v-if="supports && supports.length > 0" class="mb-10">
+              <p class="themeAccent--text title">
+                Support by
+              </p>
+              <div v-if="supports" class="d-flex align-center flex-wrap" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : ''">
+                <a v-for="item in supports" :key="`support-${item.id}`" :href="item.url" target="_blank">
+                  <img
+                    :src="item.Img ? item.Img.url : '/images/icon.png'"
+                    :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'mb-8' : 'mr-8'"
+                    height="52"
+                  >
+                </a>
+              </div>
+            </div>
+            <div v-if="manages && manages.length > 0" class="mb-10">
+              <p class="themeAccent--text title">
+                Managed by
+              </p>
+              <div v-if="manages" class="d-flex align-center flex-wrap" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : ''">
+                <a v-for="item in manages" :key="`support-${item.id}`" :href="item.url" target="_blank">
+                  <img
+                    :src="item.Img ? item.Img.url : '/images/icon.png'"
+                    :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'mb-8' : 'mr-8'"
+                    height="60"
+                  >
+                </a>
+              </div>
             </div>
           </div>
-          <div class="">
-            <p class="themeAccent--text title">
-              Managed by NXPO and CMU
-            </p>
-            <div v-if="manages" class="d-flex align-center flex-wrap" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : ''">
-              <a v-for="item in manages" :key="`support-${item.id}`" :href="item.url" target="_blank">
-                <img
-                  :src="item.Img ? item.Img.url : '/images/icon.png'"
-                  :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'mb-8' : 'mr-8'"
-                  height="60"
-                >
-              </a>
-            </div>
-          </div>
-        </div>
-      </v-container>
+        </v-container>
+      </div>
     </div>
-  </div>
+  </client-only>
 </template>
 
 <script>

@@ -11,7 +11,7 @@
               {{ item.country }}
             </p>
           </div>
-          <img src="/images/lab-right.png" class="flex-shrink-0" height="81">
+          <img src="/images/ui/lab-right.png" class="flex-shrink-0" height="81">
         </div>
         <div class="d-flex mb-2 ml-2">
           <a v-if="item.lab_link" :href="item.lab_link" target="_blank">

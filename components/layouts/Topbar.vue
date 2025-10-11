@@ -15,34 +15,17 @@
               <div class="d-flex align-center ml-3">
                 <img src="/images/logo.png" :height="['xl', 'lg'].includes($vuetify.breakpoint.name) ? '52' : '40'" contain alt="Logo">
                 <p class="mb-0 ml-5" :class="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'white--text' : 'display-1 themeAccent--text'">
-                  ASEAN Talent Mobility
+                  {{ appName }}
                 </p>
               </div>
             </v-toolbar-title>
           </NuxtLink>
           <v-spacer />
-          <div v-if="!['xs', 'sm'].includes($vuetify.breakpoint.name)" class="d-flex align-center">
-            <img
-              src="/images/atm.png"
-              height="45"
-              class="mr-8"
-            >
-            <a href="https://www.mhesi.go.th" target="_blank">
+          <div v-if="!['xs', 'sm'].includes($vuetify.breakpoint.name) && topbarLogos && topbarLogos.length > 0" class="d-flex align-center">
+            <a v-for="item in topbarLogos" :key="`topbar-logo-${item.id}`" :href="item.url" target="_blank">
               <img
-                src="/images/agencies/mhesi.png"
-                class="mr-8"
-              >
-            </a>
-            <a href="https://nxpo.or.th/" target="_blank">
-              <img
-                src="/images/agencies/nxpo.png"
-                class="mr-8"
-                height="59"
-              >
-            </a>
-            <a href="https://www.pmu-hr.or.th" target="_blank">
-              <img
-                src="/images/agencies/pmu.png"
+                :src="item.Img ? item.Img.url : '/images/icon.png'"
+                height="60"
                 class="mr-8"
               >
             </a>
@@ -285,6 +268,7 @@
 export default {
   data () {
     return {
+      appName: process.env.appName,
       search: '',
       focusSearch: false
     }
@@ -295,6 +279,9 @@ export default {
     },
     setting () {
       return this.$store.state.setting
+    },
+    topbarLogos () {
+      return this.$store.state.topbarLogos
     },
     memberMenus () {
       return this.filterMenu(this.$store.state.member)

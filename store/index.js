@@ -3,6 +3,7 @@ export const state = () => ({
   drawer: false,
   regexNoHtml: /(<[^>]*>)/g,
   setting: null,
+  topbarLogos: null,
   frontend: [
     {
       icon: 'mdi-home',
@@ -337,6 +338,12 @@ export const state = () => ({
     },
     {
       icon: 'mdi-link',
+      text: 'Topbar Logo',
+      url: 'backend-settings-topbar-logos',
+      roles: ['secret', 'admin']
+    },
+    {
+      icon: 'mdi-link',
       text: 'Support by',
       url: 'backend-settings-supports',
       roles: ['secret', 'admin']
@@ -557,6 +564,10 @@ export const actions = {
         const setting = await $axios.$get(`${process.env.apiUrl}${process.env.apiDirectory}setting`)
         commit('setSetting', setting)
       }
+      if (!state.topbarLogos) {
+        const topbarLogos = await $axios.$get(`${process.env.apiUrl}${process.env.apiDirectory}topbar-logos`)
+        commit('setTopbarLogos', topbarLogos.rows)
+      }
     } catch (e) {
       error({ statusCode: e.response.status, message: e.response.data.message })
     }
@@ -573,5 +584,8 @@ export const mutations = {
   },
   setDrawer (state, val) {
     state.drawer = val
+  },
+  setTopbarLogos (state, val) {
+    state.topbarLogos = val
   }
 }

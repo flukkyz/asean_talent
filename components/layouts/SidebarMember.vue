@@ -18,7 +18,7 @@
               class="ml-5"
             >
             <p class="ml-4 title mb-0 white--text">
-              ASEAN Talent
+              {{ appName }}
             </p>
           </div>
         </nuxt-link>
@@ -156,6 +156,7 @@
 export default {
   data () {
     return {
+      appName: process.env.appName,
       mini: false
     }
   },

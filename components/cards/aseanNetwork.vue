@@ -1,6 +1,6 @@
 <template>
   <v-card class="rounded-lg overflow-hidden relative" outlined style="border-width: 2px;">
-    <img src="/images/network.png" class="flex-shrink-0 absolute" height="100" style="bottom: 0; left: 0;">
+    <img src="/images/ui/network.png" class="flex-shrink-0 absolute" height="100" style="bottom: 0; left: 0;">
     <v-card-text class="pa-0 relative" style="height: 300px;">
       <div class="d-flex flex-column justify-space-between pt-2 pl-2 pb-2 h-100">
         <div class="">

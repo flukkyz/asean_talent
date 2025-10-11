@@ -6,7 +6,7 @@
           <h1 :class="['font-weight-bold themeAccent--text',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'headline my-6' : 'display-1']">
             ASEAN TALENT POOL DASHBOARD
           </h1>
-          <img src="/images/dashboard.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 132 : 196">
+          <img src="/images/graphics/3.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 132 : 196">
         </v-container>
       </div>
 
@@ -27,7 +27,7 @@
                   height="154"
                 >
                   <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-                    <v-img src="/images/talents.png" width="50" height="50" contain />
+                    <v-img src="/images/ui/talents.png" width="50" height="50" contain />
                     <h1 class="headline mt-4 font-weight-bold">
                       {{ $currencyText(countTalents) }}
                     </h1>
@@ -44,7 +44,7 @@
                   height="154"
                 >
                   <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-                    <v-img src="/images/keywords.png" width="50" height="50" contain />
+                    <v-img src="/images/ui/keywords.png" width="50" height="50" contain />
                     <h1 class="headline mt-4 font-weight-bold">
                       {{ $currencyText(countKeywords) }}
                     </h1>
@@ -61,7 +61,7 @@
                   height="154"
                 >
                   <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-                    <v-img src="/images/industries.png" width="50" height="50" contain />
+                    <v-img src="/images/ui/industries.png" width="50" height="50" contain />
                     <h1 class="headline mt-4 font-weight-bold">
                       {{ $currencyText(industries.length) }}
                     </h1>
@@ -595,9 +595,6 @@ export default {
             overflow: 'justify'
           }
         },
-        tooltip: {
-          valueSuffix: ' คน'
-        },
         legend: {
           enabled: false
         },
@@ -616,7 +613,7 @@ export default {
           // }
         },
         series: [{
-          name: 'จำนวน',
+          name: 'All Talents',
           colors: plotColors,
           colorByPoint: true,
           data,
@@ -843,7 +840,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top.png");
+  background-image: url("/images/ui/bg-top.png");
   background-color: #cccccc;
   background-position: top;
   background-repeat: no-repeat;

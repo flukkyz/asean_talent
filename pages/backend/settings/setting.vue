@@ -12,6 +12,31 @@
         <v-card class=" shadow mb-5">
           <v-card-title>
             <p class="mb-0 title font-weight-bold mr-3">
+              Home
+            </p>
+          </v-card-title>
+          <v-card-text>
+            <v-text-field
+              v-model="setting.home_header_title"
+              label="Home Header Title"
+              outlined
+              @change="save(setting)"
+            />
+            <v-textarea
+              v-model="setting.home_header_detail"
+              rows="4"
+              label="Home Header Detail"
+              outlined
+              dense
+              hide-details
+              @change="save(setting)"
+            />
+          </v-card-text>
+        </v-card>
+
+        <v-card class=" shadow mb-5">
+          <v-card-title>
+            <p class="mb-0 title font-weight-bold mr-3">
               Contact
             </p>
           </v-card-title>
@@ -69,7 +94,7 @@
                 <v-text-field
                   v-model="setting.contact_map_url"
                   class="mb-3 "
-                  label="Url แผนที่"
+                  label="Url Map"
                   outlined
                   dense
                   hide-details
@@ -564,7 +589,7 @@ export default {
         const result = await this.$axios.$put(this.api, data)
         await this.$fetch()
         if (result) {
-          this.$notifier.showMessage({ title: 'ปรับปรุงข้อมูลสำเร็จ', content: 'ปรับปรุงข้อมูลสำเร็จ', color: 'success' })
+          this.$notifier.showMessage({ title: 'Settings Updated', color: 'success' })
         }
       } catch (e) {
         this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })

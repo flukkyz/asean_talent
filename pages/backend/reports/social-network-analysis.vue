@@ -162,7 +162,7 @@ export default {
                 const author = await this.$axios.$get(`${process.env.apiUrl}${process.env.apiDirectory}authors/name/${e.point.id}`)
                 window.open(this.localePath({ name: 'back-talent-manages-authors-id', params: { id: author.id } }), '_blank')
               } catch (err) {
-                this.$notifier.showMessage({ title: 'ไม่พบข้อมูลในระบบ', content: `ไม่พบข้อมูลของ ${e.point.id} ในระบบ`, color: 'warning' })
+                this.$notifier.showMessage({ title: 'Not Found', content: `No data found for ${e.point.id}`, color: 'warning' })
               }
             }
           },

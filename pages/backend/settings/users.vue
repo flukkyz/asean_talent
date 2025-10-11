@@ -219,7 +219,7 @@ export default {
     async submitDelete (id) {
       try {
         await this.$axios.delete(`${this.api}/${id}`)
-        this.$notifier.showMessage({ title: 'ลบ', content: `ลบ${this.modelName}สำเร็จ`, color: 'success' })
+        this.$notifier.showMessage({ title: 'Deleted', content: `Deleted ${this.modelName} Successfully`, color: 'success' })
         this.$fetch()
       } catch (e) {
         this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })

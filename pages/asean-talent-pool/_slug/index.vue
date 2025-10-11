@@ -48,7 +48,7 @@
           height="154"
         >
           <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-            <v-img src="/images/talents.png" width="50" height="50" contain />
+            <v-img src="/images/ui/talents.png" width="50" height="50" contain />
             <h1 class="headline mt-4 font-weight-bold">
               {{ $currencyText(industry.countTalents) }}
             </h1>
@@ -65,7 +65,7 @@
           height="154"
         >
           <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-            <v-img src="/images/keywords.png" width="50" height="50" contain />
+            <v-img src="/images/ui/keywords.png" width="50" height="50" contain />
             <h1 class="headline mt-4 font-weight-bold">
               {{ $currencyText(industry.countKeywords) }}
             </h1>
@@ -82,7 +82,7 @@
           height="154"
         >
           <v-card-text class="d-flex align-center flex-column themeAccent--text pt-4">
-            <v-img src="/images/countries.png" width="50" height="50" contain />
+            <v-img src="/images/ui/countries.png" width="50" height="50" contain />
             <h1 class="headline mt-4 font-weight-bold">
               {{ $currencyText(industry.countCountries) }}
             </h1>
@@ -281,7 +281,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top.png");
+  background-image: url("/images/ui/bg-top.png");
   background-color: #cccccc;
   background-position: top;
   background-repeat: no-repeat;

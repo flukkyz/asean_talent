@@ -12,26 +12,12 @@
               small
               depressed
               color="primary"
-              @click="$bus.$emit('open-blog-form')"
+              @click="$bus.$emit('open-topbar-logo-form')"
             >
               <v-icon small class="mr-1">
                 fas fa-plus
               </v-icon>
               Create
-            </v-btn>
-            <v-btn
-              v-if="listDatas.totalItems > 0"
-              outlined
-              small
-              color="primary"
-              :loading="disabledExport"
-              :disabled="disabledExport"
-              @click="exportExcel"
-            >
-              <v-icon small class="mr-2">
-                fas fa-file-excel
-              </v-icon>
-              Download Traffic Statistics
             </v-btn>
           </v-card-title>
           <v-card-title class="pt-0">
@@ -74,48 +60,20 @@
           >
             <template #[`item.img`]="{ item }">
               <v-img v-if="item.Img" :src="item.Img.url" width="80" />
-              <v-img v-else src="/images/ui/blank_data.jpg" width="80" />
             </template>
-            <template #[`item.blog`]="{ item }">
-              <p :id="`table-item-${item.id}`" class="mb-0 font-weight-bold">
-                {{ item.title }}
+            <template #[`item.name`]="{ item }">
+              <p class="body-1 mb-0">
+                {{ item.name }}
               </p>
-              <p class="caption mb-0">
-                <v-icon x-small class="mt-n1">
-                  fas fa-calendar-alt
-                </v-icon>
-                {{ $dateText(item.createdAt,'medium','short') }}
-                <v-icon x-small class="ml-3 mt-n1">
-                  fas fa-eye
-                </v-icon>
-                {{ $currencyText(item.hit) }}
+              <p v-if="item.description" class="caption mb-0">
+                {{ item.description }}
               </p>
-              <div v-if="item.tags" class="d-flex flex-wrap">
-                <v-chip
-                  v-for="(val, index) in item.tags.split('; ')"
-                  :key="`tags-${index}`"
-                  x-small
-                  class="ma-1"
-                  color="primary"
-                >
-                  {{ val }}
-                </v-chip>
-              </div>
-            </template>
-            <template #[`item.view`]="{ item }">
-              <a v-if="item.active" :href="localePath({ name: 'blogs-slug', params: { slug: item.slug } })" target="_blank">
-                <v-icon
-                  small
-                >
-                  fas fa-eye
-                </v-icon>
-              </a>
             </template>
             <template #[`item.edit`]="{ item }">
               <v-icon
                 small
                 color="warning"
-                @click="$bus.$emit('open-blog-form', item)"
+                @click="$bus.$emit('open-topbar-logo-form', item)"
               >
                 fas fa-edit
               </v-icon>
@@ -157,7 +115,7 @@
                 v-if="!item.active"
                 small
                 color="error"
-                @click="$bus.$emit('open-delete-dialog', item.id, item.title)"
+                @click="$bus.$emit('open-delete-dialog', item.id, item.name)"
               >
                 fas fa-trash
               </v-icon>
@@ -182,7 +140,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <forms-blog
+    <forms-topbar-logo
       @add="submitCreate"
       @edit="submitUpdate"
       @removeImage="removeImage"
@@ -200,10 +158,9 @@ export default {
   middleware: ['authen-admin', 'backend', 'admin'],
   data () {
     return {
-      api: `${process.env.apiUrl}${process.env.apiDirectory}blogs`,
-      modelName: 'News & Activity',
+      api: `${process.env.apiUrl}${process.env.apiDirectory}topbar-logos`,
+      modelName: 'Topbar Logo',
       listDatas: null,
-      disabledExport: false,
       queryParams: {
         size: 20,
         q: '',
@@ -215,19 +172,12 @@ export default {
           text: '',
           value: 'img',
           align: 'center',
-          cellClass: 'pa-1',
+          cellClass: 'pa-0',
           sortable: false
         },
         {
-          text: 'News & Activity',
-          value: 'blog',
-          cellClass: 'py-1 pl-1'
-        },
-        {
-          text: 'View',
-          value: 'view',
-          width: 50,
-          align: 'center',
+          text: 'Detail',
+          value: 'name',
           sortable: false
         },
         {
@@ -350,32 +300,6 @@ export default {
         this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })
       }
       this.$overlay.hide()
-    },
-    async exportExcel () {
-      this.disabledExport = true
-      const searchParams = new URLSearchParams({
-        ...this.queryParams,
-        size: this.listDatas.totalItems,
-        page: 1
-      }).toString()
-      try {
-        const datas = await this.$axios.$get(`${this.api}${(searchParams ? '?' + searchParams : '')}`)
-        const dataWS = this.$xlsx.utils.json_to_sheet(datas.rows.map((ele) => {
-          return {
-            Title: ele.title,
-            Viewer: ele.hit,
-            'Created At': ele.createdAt
-          }
-        }))
-        const wb = this.$xlsx.utils.book_new()
-        this.$xlsx.utils.book_append_sheet(wb, dataWS)
-        this.$xlsx.writeFile(wb, 'news-activities-traffic-statistics-' + new Date().getTime() + '.xlsx')
-      } catch (e) {
-        console.log(e)
-        this.$nuxt.error({ statusCode: e.response.status, message: e.response.data.message })
-      } finally {
-        this.disabledExport = false
-      }
     }
   }
 }

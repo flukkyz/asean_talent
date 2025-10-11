@@ -61,7 +61,7 @@
                     {{ item.firstname }}
                   </div>
                 </div>
-                <img src="/images/talent-right.png" height="81">
+                <img src="/images/ui/talent-right.png" height="81">
               </div>
             </v-card-text>
             <v-card-text class="d-flex justify-space-between align-end">
@@ -86,7 +86,7 @@
                   <v-tooltip top>
                     <template #activator="{ on, attrs }">
                       <img
-                        src="/images/rg.png"
+                        src="/images/ui/rg.png"
                         height="33"
                         v-bind="attrs"
                         class="mr-3"
@@ -116,7 +116,7 @@
                   <v-tooltip top>
                     <template #activator="{ on, attrs }">
                       <img
-                        src="/images/tnrr.png"
+                        src="/images/ui/tnrr.png"
                         height="33"
                         v-bind="attrs"
                         class="mr-3"
@@ -229,7 +229,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top.png");
+  background-image: url("/images/ui/bg-top.png");
   background-color: #cccccc;
   background-position: top;
   background-repeat: no-repeat;

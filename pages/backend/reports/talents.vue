@@ -5,7 +5,7 @@
         <v-card v-if="listDatas">
           <v-card-title>
             <h3 class="mr-2">
-              รายงานข้อมูล{{ modelName }}
+              {{ modelName }} Report
             </h3>
             <v-card-title class="flex-nowrap">
               <v-autocomplete
@@ -51,7 +51,7 @@
           <v-divider />
           <v-card-title v-if="showFilters === 0">
             <p class="caption grey--text mb-0">
-              Columns ที่แสดง
+              Show Columns
             </p>
             <v-chip-group
               v-model="showColumns"
@@ -404,7 +404,7 @@ export default {
   },
   head () {
     return {
-      title: `รายงานข้อมูล${this.modelName}`
+      title: `${this.modelName} Report`
     }
   },
   created () {

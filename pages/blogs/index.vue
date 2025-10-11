@@ -5,7 +5,7 @@
         <h1 :class="['font-weight-bold themeAccent--text',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'headline my-6' : 'display-1']">
           {{ pageName }}
         </h1>
-        <img src="/images/about.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 152 : 196">
+        <img src="/images/graphics/2.png" :height="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 152 : 196">
       </v-container>
     </div>
     <v-container v-if="listDatas" class="py-16" :class="{ 'px-5': ['sm', 'xs'].includes($vuetify.breakpoint.name)}">
@@ -141,7 +141,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top.png");
+  background-image: url("/images/ui/bg-top.png");
   background-color: #cccccc;
   background-position: top;
   background-repeat: no-repeat;

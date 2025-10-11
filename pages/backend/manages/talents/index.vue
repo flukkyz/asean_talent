@@ -109,7 +109,7 @@
           >
             <template #[`item.img`]="{ item }">
               <v-img v-if="item.Img" :src="item.Img.url" width="80" />
-              <v-img v-else src="/images/blank_data.jpg" width="80" />
+              <v-img v-else src="/images/ui/blank_data.jpg" width="80" />
             </template>
             <template #[`item.name`]="{ item }">
               {{ item.firstname }}

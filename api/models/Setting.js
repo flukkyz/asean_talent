@@ -5,6 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Setting extends Model { }
   Setting.init({
+    home_header_title: DataTypes.STRING,
+    home_header_detail: DataTypes.TEXT,
     website_name: DataTypes.STRING,
     contact_name: DataTypes.TEXT,
     contact_address: DataTypes.TEXT,

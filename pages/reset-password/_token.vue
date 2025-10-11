@@ -121,7 +121,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero-image {
-  background-image: url("/images/bg-top-xl.png");
+  background-image: url("/images/ui/bg-top-xl.png");
   background-color: #cccccc;
   height: 356px;
   background-position: top;

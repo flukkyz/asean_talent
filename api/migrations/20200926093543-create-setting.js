@@ -8,6 +8,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      home_header_title: {
+        type: Sequelize.STRING
+      },
+      home_header_detail: {
+        type: Sequelize.TEXT
+      },
       website_name: {
         type: Sequelize.TEXT
       },
