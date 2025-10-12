@@ -96,7 +96,7 @@ export default {
   },
   created () {
     const pdpa = this.$cookies.get('pdpa')
-    if (!pdpa || (pdpa && pdpa !== 'accept')) {
+    if ((!pdpa || (pdpa && pdpa !== 'accept')) && this.setting && this.setting.pdpa) {
       this.pdpaDialog = true
     }
     if (process.client) {
