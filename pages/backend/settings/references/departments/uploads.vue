@@ -1,5 +1,5 @@
 <template>
-  <uploads-location api="departments" model-name="Department" />
+  <uploads-location api="departments" model-name="Funding Agency" />
 </template>
 
 <script>

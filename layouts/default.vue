@@ -356,4 +356,10 @@ export default {
 .shadow{
     box-shadow: 2px 3px 10px #e9e9e9 !important;
 }
+.wrap-word {
+  white-space: normal;      /* allows wrapping */
+  overflow-wrap: break-word; /* break long words if needed */
+  word-wrap: break-word;     /* legacy support for older browsers */
+  word-break: normal;        /* ensure words aren't broken arbitrarily */
+}
 </style>

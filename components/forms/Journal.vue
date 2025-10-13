@@ -61,7 +61,7 @@
             multiple
           >
             <template #label>
-              Index By
+              Indexed By
               <v-icon color="error" x-small class="mt-n3">
                 mdi-asterisk
               </v-icon>
@@ -106,7 +106,7 @@ export default {
           v => !!v || 'Publisher is required'
         ],
         indexs: [
-          v => v.length > 0 || 'Index By is required'
+          v => v.length > 0 || 'Indexed By is required'
         ]
       },
       form: {}

@@ -5,11 +5,14 @@
         <p class="headline font-weight-bold mb-0">
           {{ modelName }}
         </p>
-        <p class="caption red--text text--darken-3">
+        <p class="caption red--text text--darken-3 wrap-word">
           <v-icon color="red darken-3" x-small>
             mdi-asterisk
           </v-icon>
-          Recommended size 1920 x 1080 (px)
+          The display slider automatically adjusts to the screen size. All images should be the same size, with a recommended height of
+          <span class="font-weight-bold">
+            500 pixels.
+          </span>
         </p>
       </div>
       <v-spacer />
@@ -72,7 +75,7 @@ export default {
   middleware: ['authen-admin', 'backend', 'admin'],
   data () {
     return {
-      modelName: 'Slide Show',
+      modelName: 'Slider',
       api: `${process.env.apiUrl}${process.env.apiDirectory}slides`,
       listDatas: null
     }

@@ -1,5 +1,5 @@
 <template>
-  <uploads-name api="index-standards" model-name="Index By" />
+  <uploads-name api="index-standards" model-name="Indexed By" />
 </template>
 
 <script>

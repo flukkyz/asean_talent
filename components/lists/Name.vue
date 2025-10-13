@@ -3,10 +3,17 @@
     <v-row justify="center" class="mb-10">
       <v-col cols="12">
         <v-card v-if="listDatas">
-          <v-card-title>
-            <h3 class="mr-2">
-              {{ modelName }}
-            </h3>
+          <v-card-title class="pb-0">
+            <div class="">
+              <h3 class="">
+                {{ modelName }}
+              </h3>
+              <p v-if="modelDetail" class="caption info--text mb-0 wrap-word">
+                {{ modelDetail }}
+              </p>
+            </div>
+          </v-card-title>
+          <v-card-title class="pt-0">
             <v-btn
               class="mr-2"
               small
@@ -109,7 +116,15 @@ export default {
       default: null,
       require: true
     },
+    modelDetail: {
+      type: String,
+      default: null
+    },
     upload: {
+      type: Boolean,
+      default: false
+    },
+    disabledDelete: {
       type: Boolean,
       default: false
     }
@@ -135,15 +150,19 @@ export default {
           width: 50,
           align: 'center',
           sortable: false
-        },
-        {
-          text: 'Delete',
-          value: 'delete',
-          width: 50,
-          align: 'center',
-          sortable: false
         }
       ]
+    }
+  },
+  mounted () {
+    if (!this.disabledDelete) {
+      this.tableHeaders.push({
+        text: 'Delete',
+        value: 'delete',
+        width: 50,
+        align: 'center',
+        sortable: false
+      })
     }
   },
   async fetch () {

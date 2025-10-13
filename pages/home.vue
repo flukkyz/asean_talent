@@ -1,6 +1,37 @@
 <template>
   <client-only v-if="setting">
     <div class="">
+      <v-carousel
+        v-if="slides && slides.length> 0"
+        hide-delimiter-background
+        :show-arrows="false"
+        :hide-delimiters="slides.length < 2"
+        :show-arrows-on-hover="slides.length> 1"
+        height="100%"
+        width="100%"
+        cycle
+      >
+        <template v-for="slide in slides">
+          <a
+            v-if="slide.link"
+            :key="`slide-${slide.id}`"
+            :href="slide.link"
+            target="_blank"
+          >
+            <v-carousel-item>
+              <v-img :src="slide.Img.url" />
+
+            </v-carousel-item>
+          </a>
+          <v-carousel-item
+            v-else
+            :key="`slide-${slide.id}`"
+          >
+            <v-img :src="slide.Img.url" />
+          </v-carousel-item>
+        </template>
+      </v-carousel>
+
       <div class="bg-header">
         <v-container class="d-flex align-center py-10" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : 'justify-space-around'">
           <div :class="['xl', 'lg','md'].includes($vuetify.breakpoint.name) ? '' : 'mx-5'" style="max-width: 530px;">
@@ -280,83 +311,13 @@
           </v-expand-transition>
         </v-container>
       </div>
-      <!-- <v-container v-if="slides && slides.length> 0" class="mt-8">
-        <v-row>
-          <v-col cols="12" lg="8" class="pr-0 pt-0">
-            <v-carousel
-              hide-delimiter-background
-              :show-arrows="false"
-              :hide-delimiters="slides.length < 2"
-              :show-arrows-on-hover="slides.length> 1"
-              :height="slideSizes[$vuetify.breakpoint.name]"
-              width="100%"
-              cycle
-            >
-              <template v-for="slide in slides">
-                <a
-                  v-if="slide.link"
-                  :key="`slide-${slide.id}`"
-                  :href="slide.link"
-                  target="_blank"
-                >
-                  <v-carousel-item>
-                    <v-img :src="slide.Img.url" />
-
-                  </v-carousel-item>
-                </a>
-                <v-carousel-item
-                  v-else
-                  :key="`slide-${slide.id}`"
-                >
-                  <v-img :src="slide.Img.url" />
-                </v-carousel-item>
-              </template>
-            </v-carousel>
-          </v-col>
-          <v-col v-if="banners && banners.length> 0" cols="12" lg="4">
-            <v-row>
-              <v-col cols="12" sm="6" lg="12" class="pt-0">
-                <a
-                  v-if="banners[0].link"
-                  :href="banners[0].link"
-                  target="_blank"
-                >
-                  <v-img
-                    :src="banners[0].Img.url"
-                  />
-                </a>
-                <v-img
-                  v-else
-                  :src="banners[0].Img.url"
-                />
-              </v-col>
-              <v-col cols="12" sm="6" lg="12" class="pt-0">
-                <a
-                  v-if="banners[1].link"
-                  :href="banners[1].link"
-                  target="_blank"
-                >
-                  <v-img
-                    class="mt-5"
-                    :src="banners[1].Img.url"
-                  />
-                </a>
-                <v-img
-                  v-else
-                  :src="banners[1].Img.url"
-                />
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-container> -->
 
       <div v-if="(supports && supports.length > 0) || (manages && manages.length > 0)" class="partner-section">
         <v-container>
           <div class="d-flex flex-wrap w-100 pt-12 pb-4" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column align-center' : 'justify-space-around align-start'">
             <div v-if="supports && supports.length > 0" class="mb-10">
               <p class="themeAccent--text title">
-                Support by
+                Supported by
               </p>
               <div v-if="supports" class="d-flex align-center flex-wrap" :class="['xs','sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : ''">
                 <a v-for="item in supports" :key="`support-${item.id}`" :href="item.url" target="_blank">
@@ -501,8 +462,8 @@ export default {
       }
       this.firstLoad = true
 
-      // const slides = await this.$axios.$get(`${this.apiPath}slides`)
-      // this.slides = slides
+      const slides = await this.$axios.$get(`${this.apiPath}slides`)
+      this.slides = slides
       // const banners = await this.$axios.$get(`${this.apiPath}banners`)
       // this.banners = banners
       const listBlogs = await this.$axios.$get(`${this.apiPath}blogs?${new URLSearchParams({ size: 10 }).toString()}`)

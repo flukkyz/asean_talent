@@ -119,7 +119,7 @@ export default {
           sortable: false
         },
         {
-          text: 'Index By',
+          text: 'Indexed By',
           value: 'index_by',
           sortable: false
         },

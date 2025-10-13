@@ -20,6 +20,11 @@
               Create
             </v-btn>
           </v-card-title>
+          <v-card-title class="py-0">
+            <p class="caption info--text mb-0 wrap-word">
+              Manage logos or names of organizations that support the platform. You can add, edit, show/hide, or delete supporter information. Only active items will appear on the website.
+            </p>
+          </v-card-title>
           <v-card-title class="pt-0">
             <v-text-field
               v-model="queryParams.q"
@@ -159,7 +164,7 @@ export default {
   data () {
     return {
       api: `${process.env.apiUrl}${process.env.apiDirectory}supports`,
-      modelName: 'Support by',
+      modelName: 'Supported by',
       listDatas: null,
       queryParams: {
         size: 20,

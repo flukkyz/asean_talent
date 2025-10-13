@@ -106,17 +106,17 @@ export const state = () => ({
         {
           text: 'Talents Report',
           url: 'backend-reports-talents'
-        },
-        {
-          text: 'Social Network Analysis',
-          url: 'backend-reports-social-network-analysis',
-          roles: ['secret', 'admin']
-        },
-        {
-          text: 'Thai National Research Repository (TNRR)',
-          url: 'backend-reports-tnrr',
-          roles: ['secret', 'admin']
         }
+        // {
+        //   text: 'Social Network Analysis',
+        //   url: 'backend-reports-social-network-analysis',
+        //   roles: ['secret', 'admin']
+        // },
+        // {
+        //   text: 'Thai National Research Repository (TNRR)',
+        //   url: 'backend-reports-tnrr',
+        //   roles: ['secret', 'admin']
+        // }
       ]
     },
     {
@@ -247,6 +247,12 @@ export const state = () => ({
       ]
     },
     {
+      icon: 'mdi-share-variant',
+      text: 'Asean Network',
+      url: 'backend-manages-asean-networks',
+      roles: ['secret', 'admin']
+    },
+    {
       icon: 'fas fa-users',
       text: 'Co Author',
       url: 'backend-manages-co-authors',
@@ -273,7 +279,43 @@ export const state = () => ({
       roles: ['secret', 'admin', 'country_admin']
     },
     {
-      group: 'References',
+      icon: 'fas fa-display',
+      text: 'Display Setting',
+      url: 'backend-settings-setting',
+      roles: ['secret', 'admin']
+    },
+    {
+      icon: 'fas fa-images',
+      text: 'Slider',
+      url: 'backend-settings-slides',
+      roles: ['secret', 'admin']
+    },
+    // {
+    //   icon: 'mdi-link',
+    //   text: 'Portal Link',
+    //   url: 'backend-settings-portals',
+    //   roles: ['secret', 'admin']
+    // },
+    {
+      icon: 'mdi-link',
+      text: 'Topbar Logo',
+      url: 'backend-settings-topbar-logos',
+      roles: ['secret', 'admin']
+    },
+    {
+      icon: 'mdi-link',
+      text: 'Supported by',
+      url: 'backend-settings-supports',
+      roles: ['secret', 'admin']
+    },
+    {
+      icon: 'mdi-link',
+      text: 'Managed by',
+      url: 'backend-settings-manages',
+      roles: ['secret', 'admin']
+    },
+    {
+      group: 'Reference Datas',
       icon: 'fas fa-cogs',
       roles: ['secret', 'admin'],
       items: [
@@ -283,7 +325,7 @@ export const state = () => ({
           roles: ['secret', 'admin']
         },
         {
-          text: 'Index By',
+          text: 'Indexed By',
           url: 'backend-settings-references-index-standards',
           roles: ['secret', 'admin']
         },
@@ -298,7 +340,7 @@ export const state = () => ({
           roles: ['secret', 'admin']
         },
         {
-          text: 'Department',
+          text: 'Funding Agency',
           url: 'backend-settings-references-departments',
           roles: ['secret', 'admin']
         },
@@ -320,39 +362,9 @@ export const state = () => ({
         {
           text: 'Domain Industry',
           url: 'backend-settings-references-domain-industries',
-          roles: ['secret']
+          roles: ['secret', 'admin']
         }
       ]
-    },
-    {
-      icon: 'mdi-share-variant',
-      text: 'Asean Network',
-      url: 'backend-settings-asean-networks',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'mdi-link',
-      text: 'Portal Link',
-      url: 'backend-settings-portals',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'mdi-link',
-      text: 'Topbar Logo',
-      url: 'backend-settings-topbar-logos',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'mdi-link',
-      text: 'Support by',
-      url: 'backend-settings-supports',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'mdi-link',
-      text: 'Managed by',
-      url: 'backend-settings-manages',
-      roles: ['secret', 'admin']
     },
     {
       icon: 'mdi-account-circle',
@@ -365,25 +377,13 @@ export const state = () => ({
       text: 'Staff',
       url: 'backend-settings-users',
       roles: ['secret', 'admin']
-    },
-    {
-      icon: 'fas fa-images',
-      text: 'Slide Show',
-      url: 'backend-settings-slides',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'fas fa-image',
-      text: 'Banner',
-      url: 'backend-settings-banners',
-      roles: ['secret', 'admin']
-    },
-    {
-      icon: 'fas fa-cogs',
-      text: 'Setting',
-      url: 'backend-settings-setting',
-      roles: ['secret', 'admin']
     }
+    // {
+    //   icon: 'fas fa-image',
+    //   text: 'Banner',
+    //   url: 'backend-settings-banners',
+    //   roles: ['secret', 'admin']
+    // }
   ],
   member: [
     {

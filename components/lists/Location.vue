@@ -3,10 +3,17 @@
     <v-row justify="center" class="mb-10">
       <v-col cols="12">
         <v-card v-if="listDatas">
-          <v-card-title>
-            <h3 class="mr-2">
-              {{ modelName }}
-            </h3>
+          <v-card-title class="pb-0">
+            <div class="">
+              <h3 class="">
+                {{ modelName }}
+              </h3>
+              <p v-if="modelDetail" class="caption info--text mb-0 wrap-word">
+                {{ modelDetail }}
+              </p>
+            </div>
+          </v-card-title>
+          <v-card-title class="pt-0">
             <v-btn
               class="mr-2"
               small
@@ -107,6 +114,10 @@ export default {
       type: String,
       default: null,
       require: true
+    },
+    modelDetail: {
+      type: String,
+      default: null
     }
   },
   data () {

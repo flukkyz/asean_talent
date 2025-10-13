@@ -20,6 +20,11 @@
               Create
             </v-btn>
           </v-card-title>
+          <v-card-title class="py-0">
+            <p class="caption info--text mb-0 wrap-word">
+              Manage logos displayed on the website’s top navigation bar. You can add, edit, show/hide, or delete logos. Only active logos appear on the Topbar.
+            </p>
+          </v-card-title>
           <v-card-title class="pt-0">
             <v-text-field
               v-model="queryParams.q"

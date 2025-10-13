@@ -126,7 +126,7 @@
 export default {
   data () {
     return {
-      modelName: 'Support by',
+      modelName: 'Supported by',
       apiPath: `${process.env.apiUrl}${process.env.apiDirectory}`,
       dialog: false,
       dialogWidth: 999,
