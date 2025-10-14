@@ -131,6 +131,7 @@
                         <p class="mb-0 title primary--text white">
                           {{ item.email }}
                           <v-icon
+                            v-if="!item.verify_at"
                             small
                             color="warning"
                             @click="$bus.$emit('open-member-form', item)"
@@ -507,6 +508,16 @@
                 </v-row>
               </td>
             </template>
+            <template #[`item.delete`]="{ item }">
+              <v-icon
+                v-if="!item.verify_at"
+                small
+                color="error"
+                @click="$bus.$emit('open-delete-dialog', item.id, item.member_type === 'researcher' ? `${item.Researcher.firstname} ${item.Researcher.lastname}` : item.Organization.name)"
+              >
+                fas fa-trash
+              </v-icon>
+            </template>
           </v-data-table>
           <v-divider />
           <v-divider v-if="listDatas.totalItems > 0" />
@@ -530,6 +541,7 @@
     </v-row>
     <forms-member @save="submitUpdate" />
     <dialogs-confirm @confirm="submitVerify" />
+    <dialogs-delete @delete="submitDelete" />
   </v-container>
 </template>
 
@@ -541,7 +553,7 @@ export default {
     return {
       api: `${process.env.apiUrl}${process.env.apiDirectory}members`,
       countryApi: `${process.env.apiUrl}${process.env.apiDirectory}countries`,
-      modelName: 'Members',
+      modelName: 'Member List',
       selectedMemberType: [],
       listDatas: null,
       countries: null,
@@ -577,6 +589,13 @@ export default {
         {
           text: 'Last Login',
           value: 'last_login',
+          sortable: false
+        },
+        {
+          text: 'Delete',
+          value: 'delete',
+          width: 50,
+          align: 'center',
           sortable: false
         },
         { text: '', value: 'data-table-expand' }
@@ -666,6 +685,16 @@ export default {
         await this.$axios.$post(`${this.api}/verify`, { id: data.id })
         await this.$fetch()
         this.$notifier.showMessage({ title: 'Verified', content: 'Verify E-mail Successfully', color: 'success' })
+      } catch (e) {
+        this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })
+      }
+      this.$overlay.hide()
+    },
+    async submitDelete (id) {
+      try {
+        await this.$axios.delete(`${this.api}/${id}`)
+        this.$notifier.showMessage({ title: 'Deleted', content: `Deleted ${this.modelName} Successfully`, color: 'success' })
+        this.$fetch()
       } catch (e) {
         this.$notifier.showMessage({ title: 'Error', content: e, color: 'error' })
       }

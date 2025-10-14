@@ -386,7 +386,7 @@
             <div :class="['d-flex ',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : 'justify-space-between']">
               <div :class="['flex-shrink-0',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'mb-5' : 'w-30 mr-5']">
                 <p class="mb-0 font-weight-bold">
-                  Education info
+                  Education Info
                 </p>
                 <p class="mb-0 grey--text caption">
                   Update your education experience.
@@ -443,7 +443,7 @@
             <div :class="['d-flex ',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'flex-column' : 'justify-space-between']">
               <div :class="['flex-shrink-0',['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'mb-5' : 'w-30 mr-5']">
                 <p class="mb-0 font-weight-bold">
-                  Research info
+                  Research Info
                 </p>
                 <p class="mb-0 grey--text caption">
                   Update your research expertise.

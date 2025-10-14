@@ -115,7 +115,7 @@ export default {
   data () {
     return {
       api: `${process.env.apiUrl}${process.env.apiDirectory}users`,
-      modelName: 'Staffs',
+      modelName: 'Staff Management',
       listDatas: null,
       queryParams: {
         size: 20,

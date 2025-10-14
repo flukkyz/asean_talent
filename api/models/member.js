@@ -76,6 +76,22 @@ module.exports = (sequelize, DataTypes) => {
         member.password = bcryptjs.hashSync(member.password, salt)
         member.temp_token = randomstring.generate(128)
         member.verify_token = randomstring.generate(64)
+      },
+      beforeDestroy: async (model, options) => {
+        if (!model.verify_at) {
+          const researcher = await model.getResearcher()
+          if (researcher) {
+            await researcher.destroy()
+          }
+          const organization = await model.getOrganization()
+          if (organization) {
+            await organization.destroy()
+          }
+          const dataPrivacy = await model.getDataPrivacy()
+          if (dataPrivacy) {
+            await dataPrivacy.destroy()
+          }
+        }
       }
     },
     sequelize,
@@ -93,5 +109,9 @@ module.exports = (sequelize, DataTypes) => {
   Member.prototype.validAuthToken = function (authToken) {
     return this.auth_token === authToken
   }
+  Member.beforeBulkDestroy(function (options) {
+    options.individualHooks = true
+    return options
+  })
   return Member
 }

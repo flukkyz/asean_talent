@@ -368,13 +368,13 @@ export const state = () => ({
     },
     {
       icon: 'mdi-account-circle',
-      text: 'Member',
+      text: 'Member List',
       url: 'backend-settings-members',
       roles: ['secret', 'admin', 'country_admin']
     },
     {
       icon: 'mdi-account-supervisor',
-      text: 'Staff',
+      text: 'Staff Management',
       url: 'backend-settings-users',
       roles: ['secret', 'admin']
     }
