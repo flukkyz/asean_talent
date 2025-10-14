@@ -372,7 +372,7 @@
         <v-card class=" shadow mb-5">
           <v-card-title>
             <p class="mb-0 title font-weight-bold mr-3">
-              Member Notice
+              Member Announcements
             </p>
             <v-spacer />
             <v-btn
@@ -380,7 +380,7 @@
               class="shadow "
               x-small
               color="warning"
-              @click="$bus.$emit('open-popup-form', setting,'member_notice','Member Notice')"
+              @click="$bus.$emit('open-popup-form', setting,'member_notice','Member Announcements')"
             >
               <v-icon small>
                 fas fa-edit
