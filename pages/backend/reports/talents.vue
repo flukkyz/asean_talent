@@ -370,14 +370,14 @@ export default {
           cellClass: 'text-center',
           sortable: false,
           value: 'research_gate'
-        },
-        {
-          text: 'TNRR',
-          class: 'text-center',
-          cellClass: 'text-center',
-          sortable: false,
-          value: 'link_tnrr'
         }
+        // {
+        //   text: 'TNRR',
+        //   class: 'text-center',
+        //   cellClass: 'text-center',
+        //   sortable: false,
+        //   value: 'link_tnrr'
+        // }
       ]
     }
   },

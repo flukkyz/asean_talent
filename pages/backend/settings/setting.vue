@@ -187,7 +187,7 @@
                   @change="subDashboardMenuChange"
                 />
               </v-col>
-              <v-col cols="12" md="6" lg="4" xl="3">
+              <!-- <v-col cols="12" md="6" lg="4" xl="3">
                 <v-checkbox
                   v-model="setting.show_dashboard_country_industry"
                   class="mr-8 mr-8 mt-0"
@@ -204,7 +204,7 @@
                   hide-details
                   @change="subDashboardMenuChange"
                 />
-              </v-col>
+              </v-col> -->
             </v-row>
 
             <v-divider class="my-5" />
