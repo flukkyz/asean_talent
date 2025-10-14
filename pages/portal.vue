@@ -23,7 +23,7 @@
           <v-spacer />
           <div v-if="!['xs', 'sm'].includes($vuetify.breakpoint.name)" class="d-flex align-center">
             <img
-              src="/images/atm.png"
+              src="/images/agencies/atm.png"
               height="45"
               class="mr-8"
             >
