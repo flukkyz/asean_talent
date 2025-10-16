@@ -1,21 +1,16 @@
 'use strict'
 const db = require('../models')
 const setting = require('./generates/setting')
+const users = require('./generates/users')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('setting', setting)
 
-    const users = [
-      'admin@admin.admin'
-      // 'user1@admin.admin',
-      // 'user2@admin.admin'
-    ]
-
-    for (const [index, user] of users.entries()) {
+    for (const user of users) {
       await db.User.create({
-        name: `Admin${index + 1}`,
-        email: user,
-        password: '111111',
+        name: user.name.trim(),
+        email: user.email.trim(),
+        password: user.password.trim(),
         role: 'admin'
       })
     }

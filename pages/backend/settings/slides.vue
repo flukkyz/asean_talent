@@ -9,9 +9,9 @@
           <v-icon color="red darken-3" x-small>
             mdi-asterisk
           </v-icon>
-          The display slider automatically adjusts to the screen size. All images should be the same size, with a recommended height of
+          The display slider automatically adjusts to the screen size. All images should be the same size, with a recommended of
           <span class="font-weight-bold">
-            500 pixels.
+            1600 x 500 pixels.
           </span>
         </p>
       </div>
