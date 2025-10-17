@@ -231,7 +231,7 @@ export default {
         email: '',
         password: '',
         confirm_password: '',
-        role: 'country_admin',
+        role: 'admin',
         country_id: null
       }
     },

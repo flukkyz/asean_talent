@@ -458,8 +458,8 @@ export const state = () => ({
   ],
   enums: {
     roles: {
-      admin: 'Main Admin',
-      country_admin: 'Country Admin'
+      admin: 'Main Admin'
+      // country_admin: 'Country Admin'
     },
     memberTypes: {
       Researcher: 'researcher',
