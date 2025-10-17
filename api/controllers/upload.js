@@ -10,6 +10,11 @@ module.exports = {
     try {
       let talent = null
       let scopus = null
+      if (!body.name || body.name.trim().length === 0) {
+        return res.status(404).json({
+          message: 'Not Found Name'
+        })
+      }
 
       if (body.scopus_id) {
         scopus = await db.Scopus.findOne({
@@ -163,6 +168,11 @@ module.exports = {
 
           body.university_id = body.university ? _.find(universities, { name: body.university.trim() }).id : null
           body.city_id = body.city ? _.find(cities, { name: body.city.trim() }).id : null
+          if (!body.country || body.country.trim().length === 0) {
+            return res.status(404).json({
+              message: 'Country is required'
+            })
+          }
           body.country_id = body.country ? _.find(countries, { name: body.country.trim() }).id : null
           if (!body.country_id) {
             return res.status(404).json({
@@ -235,6 +245,11 @@ module.exports = {
     try {
       let talent = null
       let scopus = null
+      if (!body.name || body.name.trim().length === 0) {
+        return res.status(404).json({
+          message: 'Not Found Name'
+        })
+      }
 
       if (body.scopus_id) {
         scopus = await db.Scopus.findOne({
@@ -390,6 +405,11 @@ module.exports = {
 
           body.university_id = body.university ? _.find(universities, { name: body.university.trim() }).id : null
           body.city_id = body.city ? _.find(cities, { name: body.city.trim() }).id : null
+          if (!body.country || body.country.trim().length === 0) {
+            return res.status(404).json({
+              message: 'Country is required'
+            })
+          }
           body.country_id = body.country ? _.find(countries, { name: body.country.trim() }).id : null
           if (!body.country_id) {
             return res.status(404).json({
@@ -542,6 +562,11 @@ module.exports = {
   storeMatchCompany: async (req, res, next) => {
     const body = req.body
 
+    if (!body.country || body.country.trim().length === 0) {
+      return res.status(404).json({
+        message: 'Country is required'
+      })
+    }
     try {
       const organizationTypes = await db.OrganizationType.findAll()
       const cities = await db.City.findAll()
@@ -613,6 +638,11 @@ module.exports = {
   storeFundingOrganization: async (req, res, next) => {
     const body = req.body
 
+    if (!body.country || body.country.trim().length === 0) {
+      return res.status(404).json({
+        message: 'Country is required'
+      })
+    }
     try {
       const organizationTypes = await db.OrganizationType.findAll()
       const cities = await db.City.findAll()
@@ -682,12 +712,19 @@ module.exports = {
       return res.status(204).send()
     } catch (e) {
       e.message = 'Upload Fail: ' + e
+      console.log(e)
+
       next(e)
     }
   },
   storeLabLocation: async (req, res, next) => {
     const body = req.body
 
+    if (!body.country || body.country.trim().length === 0) {
+      return res.status(404).json({
+        message: 'Country is required'
+      })
+    }
     try {
       const organizationTypes = await db.OrganizationType.findAll()
       const cities = await db.City.findAll()
@@ -798,6 +835,11 @@ module.exports = {
   storeTrainingCourse: async (req, res, next) => {
     const body = req.body
 
+    if (!body.country || body.country.trim().length === 0) {
+      return res.status(404).json({
+        message: 'Country is required'
+      })
+    }
     try {
       const universities = await db.University.findAll()
       const currencies = await db.Currency.findAll()
@@ -876,6 +918,11 @@ module.exports = {
     try {
       // const organizationTypes = await db.OrganizationType.findAll()
       // const cities = await db.City.findAll()
+      if (!body.country || body.country.trim().length === 0) {
+        return res.status(404).json({
+          message: 'Country is required'
+        })
+      }
       const countries = await db.Country.findAll()
 
       // body.organization_type_id = body.organization_type ? _.find(organizationTypes, { name: body.organization_type.trim() }).id : null

@@ -1,6 +1,6 @@
 const { Validator } = require('node-input-validator')
 const db = require('../models')
-const { file, model } = require('../helpers')
+const { file, model, keywordWeight } = require('../helpers')
 const sequelize = db.Sequelize
 const Op = db.Sequelize.Op
 const QueryTypes = db.Sequelize.QueryTypes
@@ -410,13 +410,28 @@ module.exports = {
   },
   destroy: async (req, res, next) => {
     const id = req.params.id
-    const oldData = await model.findByPk(Talent, id, res)
+    const oldData = await model.findByPk(Talent, id, res, [{
+      model: Scopus,
+      include: [Keyword]
+    }])
     if (req.user.role === 'country_admin' && req.user.country_id !== oldData.country_id) {
       return res.status(403).json({
         message: 'Forbidden'
       })
     }
     try {
+      for (const scopus of oldData.Scopus) {
+        for (const keywordItem of scopus.Keywords) {
+          for (const keyword of keywordItem.keyword.split(';').map(ele => ele.trim())) {
+            await keywordWeight.removeKeyword(oldData.talent_group, scopus.domain_industry, keyword)
+          }
+        }
+        await Keyword.destroy({
+          where: {
+            scopus_id: id
+          }
+        })
+      }
       await Scopus.destroy({
         where: {
           talent_id: id

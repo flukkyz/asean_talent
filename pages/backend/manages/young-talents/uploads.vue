@@ -10,6 +10,22 @@
         </v-btn>
       </a>
     </div>
+    <p class="warning--text font-weight-bold text--darken-2 caption my-2">
+        <strong>Required fields:</strong>
+        <v-chip small color="gray" label>
+          industry
+        </v-chip>
+        <v-chip small color="gray" label>
+          name
+        </v-chip>
+        <v-chip small color="gray" label>
+          country
+        </v-chip>
+        <v-chip small color="gray" label>
+          link_scopus
+        </v-chip>
+        must not be empty
+    </p>
     <div class="mt-2 d-flex">
       <v-file-input
         v-model="fileUpload"
