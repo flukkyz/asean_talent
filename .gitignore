@@ -115,8 +115,8 @@ static/uploads/labs/*
 !static/uploads/labs/.gitkeep
 static/uploads/cvs/*
 !static/uploads/cvs/.gitkeep
-static/uploads/host/*
-!static/uploads/host/.gitkeep
+static/uploads/hosts/*
+!static/uploads/hosts/.gitkeep
 static/uploads/supports/*
 !static/uploads/supports/.gitkeep
 static/uploads/manages/*
