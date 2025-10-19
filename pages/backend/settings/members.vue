@@ -510,7 +510,6 @@
             </template>
             <template #[`item.delete`]="{ item }">
               <v-icon
-                v-if="!item.verify_at"
                 small
                 color="error"
                 @click="$bus.$emit('open-delete-dialog', item.id, item.member_type === 'researcher' ? `${item.Researcher.firstname} ${item.Researcher.lastname}` : item.Organization.name)"
