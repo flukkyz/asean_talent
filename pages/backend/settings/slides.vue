@@ -42,6 +42,9 @@
               </p>
               <v-spacer />
               <div v-if="hover" class="text-center white rounded" style="min-width: 25px;">
+                <v-icon small class="mt-n1" color="warning" @click="$bus.$emit('open-image-form', item)">
+                  fas fa-edit
+                </v-icon>
                 <v-icon small class="mt-n1" color="error" @click="$bus.$emit('open-delete-dialog', item.id, modelName)">
                   fas fa-trash-alt
                 </v-icon>
