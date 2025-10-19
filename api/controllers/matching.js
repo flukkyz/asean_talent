@@ -358,7 +358,7 @@ module.exports = {
                   from lab_locations
                   INNER join countries
                   on lab_locations.country_id = countries.id
-                  INNER join machine_details
+                  LEFT join machine_details
                   on machine_details.lab_location_id = lab_locations.id
                   ${where}
                   group by lab_locations.id
