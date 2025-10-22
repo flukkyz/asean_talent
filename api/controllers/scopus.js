@@ -54,7 +54,16 @@ module.exports = {
     if (industry) {
       andWhere = [
         ...andWhere,
-        { domain_industry_id: industry }
+        {
+          [Op.or]: [
+            { domain_industry: { [Op.like]: `%; ${industry};%` } },
+            { domain_industry: { [Op.like]: `%;${industry};%` } },
+            { domain_industry: { [Op.like]: `%; ${industry}` } },
+            { domain_industry: { [Op.like]: `%;${industry}` } },
+            { domain_industry: { [Op.like]: `${industry};%` } },
+            { domain_industry: industry }
+          ]
+        }
       ]
     }
     if (q) {
@@ -63,7 +72,18 @@ module.exports = {
         {
           [Op.or]: [
             { scopus_id: { [Op.like]: `%${q}%` } },
-            { keyword: { [Op.like]: `%${q}%` } }
+            { domain_industry: { [Op.like]: `%; ${q};%` } },
+            { domain_industry: { [Op.like]: `%;${q};%` } },
+            { domain_industry: { [Op.like]: `%; ${q}` } },
+            { domain_industry: { [Op.like]: `%;${q}` } },
+            { domain_industry: { [Op.like]: `${q};%` } },
+            { domain_industry: q },
+            { keyword: { [Op.like]: `%; ${q};%` } },
+            { keyword: { [Op.like]: `%;${q};%` } },
+            { keyword: { [Op.like]: `%; ${q}` } },
+            { keyword: { [Op.like]: `%;${q}` } },
+            { keyword: { [Op.like]: `${q};%` } },
+            { keyword: q }
           ]
         }
       ]

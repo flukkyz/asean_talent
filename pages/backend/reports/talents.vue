@@ -13,7 +13,7 @@
                 :items="industries"
                 class="mx-2"
                 item-text="name"
-                item-value="id"
+                item-value="name"
                 hide-details
                 outlined
                 :disabled="industries.length === 0"
@@ -431,7 +431,7 @@ export default {
       }
       const searchParams = new URLSearchParams({
         ...this.queryParams,
-        size: this.listDatas.totalItems,
+        size: 9999999,
         page: 1
       }).toString()
       try {
