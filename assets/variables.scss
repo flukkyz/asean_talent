@@ -16,6 +16,12 @@ $input-font-size: 18px;
 
 $progress-circular-overlay-transition: all .1s linear !default;
 
+html {
+  filter: grayscale(70%);
+  -webkit-filter: grayscale(70%);
+  -moz-filter: grayscale(70%);
+}
+
 .v-application {
   font-family: $body-font-family, sans-serif !important;
   .display-4,
