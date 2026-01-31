@@ -335,6 +335,11 @@ export const state = () => ({
           roles: ['secret', 'admin']
         },
         {
+          text: 'Blog Category',
+          url: 'backend-settings-references-blog-categories',
+          roles: ['secret', 'admin']
+        },
+        {
           text: 'Religion',
           url: 'backend-settings-references-religions',
           roles: ['secret', 'admin']

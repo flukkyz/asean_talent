@@ -8,6 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Img, {
         foreignKey: 'img_id'
       })
+      this.belongsTo(models.BlogCategory, {
+        foreignKey: 'blog_category_id'
+      })
     }
   };
   Blog.init({
@@ -24,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0
     },
     img_id: DataTypes.INTEGER,
+    blog_category_id: DataTypes.INTEGER,
     active: {
       type: DataTypes.BOOLEAN,
       defaultValue: true

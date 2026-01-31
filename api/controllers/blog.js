@@ -6,6 +6,7 @@ const { file, model } = require('../helpers')
 const Op = db.Sequelize.Op
 const Blog = db.Blog
 const Img = db.Img
+const BlogCategory = db.BlogCategory
 
 module.exports = {
   inputValidate: async (req, res, next) => {
@@ -61,7 +62,7 @@ module.exports = {
     } = db.getPagination(page, size)
     try {
       const lists = await Blog.findAndCountAll({
-        include: [Img],
+        include: [Img, BlogCategory],
         where,
         limit,
         offset,
@@ -114,7 +115,7 @@ module.exports = {
   show: async (req, res, next) => {
     const slug = req.params.slug
     try {
-      const data = await model.findBySlug(Blog, slug, res, [Img], { active: true })
+      const data = await model.findBySlug(Blog, slug, res, [Img, BlogCategory], { active: true })
       await db.sequelize.transaction(async (t) => {
         return await Blog.update(
           {

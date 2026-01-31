@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" persistent scrollable :retain-focus="false" :max-width="dialogWidth">
     <v-form ref="form" v-model="valid" @submit.prevent="save">
-      <v-card class="">
+      <v-card v-if="blogCategories" class="">
         <v-toolbar flat>
           <v-toolbar-title>
             <v-icon class="mr-2">
@@ -93,6 +93,22 @@
               :config="$ckConfig(uploadConfig)"
             />
           </client-only>
+          <v-autocomplete
+            v-model="form.blog_category_id"
+            :items="blogCategories"
+            item-value="id"
+            item-text="name"
+            outlined
+            dense
+            :rules="rules.blog_category_id"
+          >
+            <template #label>
+              Category
+              <v-icon color="error" x-small class="mt-n3">
+                mdi-asterisk
+              </v-icon>
+            </template>
+          </v-autocomplete>
           <v-combobox
             v-model="tags"
             hide-selected
@@ -135,6 +151,7 @@ export default {
   data () {
     return {
       modelName: 'News & Activity',
+      apiPath: `${process.env.apiUrl}${process.env.apiDirectory}`,
       uploadConfig: {
         uploadUrl: `${process.env.apiUrl}${process.env.apiDirectory}upload-img`,
         headers: {
@@ -146,11 +163,15 @@ export default {
       mode: '',
       valid: true,
       saving: false,
+      blogCategories: null,
       imgPreview: null,
       tags: [],
       rules: {
         title: [
           v => !!v || 'Title is required'
+        ],
+        blog_category_id: [
+          v => !!v || 'Category is required'
         ],
         blog_img: [
           (v) => {
@@ -172,10 +193,11 @@ export default {
     }
   },
   created () {
-    this.$bus.$on('open-blog-form', (data) => {
+    this.$bus.$on('open-blog-form', async(data) => {
       this.dialogWidth = 1399
       this.$overlay.showLoading()
       this.saving = false
+      await this.fetchRefs()
       this.clearData()
       this.mode = 'add'
       if (data) {
@@ -203,6 +225,13 @@ export default {
     this.$bus.$off('open-blog-form')
   },
   methods: {
+    async fetchRefs () {
+      await Promise.all([
+        this.$axios.$get(`${this.apiPath}blog-categories`),
+      ]).then((values) => {
+        this.blogCategories = values[0].rows
+      })
+    },
     changeImg (val) {
       if (val) {
         this.imgPreview = URL.createObjectURL(this.form.blog_img)
@@ -221,6 +250,7 @@ export default {
         title: '',
         content: '',
         tags: '',
+        blog_category_id: null,
         blog_img: null
       }
       this.tags = []
