@@ -12,7 +12,7 @@
       <div class="search-panel py-6">
         <v-container :class="{ 'px-8': ['sm', 'xs'].includes($vuetify.breakpoint.name)}">
           <p>
-            Discover the ideal research collaborator with our Paring Search feature. This tool is designed to seamlessly connect you with researchers whose expertise and interests align with yours. Utilizing a comprehensive filter system, you can specify criteria such as university, country, or specific keywords, simplifying the process of finding partners for research projects or expanding your academic network within the ASEAN community.
+            Discover the ideal research collaborator with our Search Researchers feature. This tool is designed to seamlessly connect you with researchers whose expertise and interests align with yours. Utilizing a comprehensive filter system, you can specify criteria such as university, country, or specific keywords, simplifying the process of finding partners for research projects or expanding your academic network within the ASEAN community.
           </p>
           <v-form @submit.prevent="onSearch">
             <div class="d-flex align-end">
@@ -672,7 +672,7 @@ export default {
       apiPath: `${process.env.apiUrl}${process.env.apiDirectory}`,
       api: 'matchings',
       apiPool: 'pools',
-      pageName: 'Paring search',
+      pageName: 'Search Researchers',
       listPopulars: null,
       listDatas: null,
       listFilters: [],

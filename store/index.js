@@ -40,7 +40,7 @@ export const state = () => ({
     },
     {
       icon: 'mdi-checkbox-multiple-outline',
-      text: 'Paring search',
+      text: 'Search Researchers',
       url: 'paring-search',
       active: 'show_menu_paring_search'
     },
@@ -414,7 +414,7 @@ export const state = () => ({
     },
     {
       icon: 'mdi-checkbox-multiple-outline',
-      text: 'Paring search',
+      text: 'Search Researchers',
       url: 'my-profile-paring-search',
       active: 'show_menu_paring_search'
     },
