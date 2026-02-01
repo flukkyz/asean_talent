@@ -20,6 +20,9 @@
                 {{ item.title }}
               </p>
             </nuxt-link>
+            <p class="font-weight-bold mb-0">
+              {{ item.BlogCategory.name }}
+            </p>
             <div v-if="item.tags" class="d-flex flex-wrap mt-1">
               <v-icon color="themeAccent" left>
                 fas fa-tags

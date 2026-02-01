@@ -6,6 +6,9 @@
           <h2 class="display-1 mb-0 mt-2 text-center themeAccent--text">
             {{ blog.title }}
           </h2>
+            <h3 class="font-weight-bold text-center">
+              {{ blog.BlogCategory.name }}
+            </h3>
           <div v-if="blog.tags" class="d-flex justify-center flex-wrap mt-1">
             <v-icon color="themeAccent" left>
               fas fa-tags

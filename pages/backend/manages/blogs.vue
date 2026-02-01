@@ -34,15 +34,7 @@
               Download Traffic Statistics
             </v-btn>
           </v-card-title>
-          <v-card-title class="pt-0">
-            <v-text-field
-              v-model="queryParams.q"
-              append-icon="mdi-magnify"
-              :label="`Search ${modelName}`"
-              single-line
-              hide-details
-              @input="onSearch"
-            />
+          <v-card-title class="py-0">
             <v-spacer />
             <div class="d-flex align-center">
               <p class="caption mb-0 font-weight-bold mr-2">
@@ -65,6 +57,31 @@
               </v-btn-toggle>
             </div>
           </v-card-title>
+          <v-card-title class="pt-0">
+            <v-text-field
+              v-model="queryParams.q"
+              append-icon="mdi-magnify"
+              :label="`Search ${modelName}`"
+              single-line
+              hide-details
+              @input="onSearch"
+            />
+            <v-spacer />
+            <v-autocomplete
+              v-if="blogCategories"
+              v-model="queryParams.category"
+              :items="blogCategories"
+              item-value="id"
+              item-text="name"
+              outlined
+              clearable
+              class="flex-shrink-0"
+              hide-details
+              label="Category"
+              dense
+              @change="$fetch()"
+            />
+          </v-card-title>
           <v-data-table
             dense
             disable-pagination
@@ -77,10 +94,13 @@
               <v-img v-else src="/images/ui/blank_data.jpg" width="80" />
             </template>
             <template #[`item.blog`]="{ item }">
-              <p :id="`table-item-${item.id}`" class="mb-0 font-weight-bold">
+              <p :id="`table-item-${item.id}`" class="mb-0 font-weight-bold primary--text text--darken-3">
                 {{ item.title }}
               </p>
               <p class="caption mb-0">
+                <span class="font-weight-bold">
+                  {{ item.BlogCategory.name }}
+                </span>
                 <v-icon x-small class="mt-n1">
                   fas fa-calendar-alt
                 </v-icon>
@@ -200,15 +220,18 @@ export default {
   middleware: ['authen-admin', 'backend', 'admin'],
   data () {
     return {
+      apiPath: `${process.env.apiUrl}${process.env.apiDirectory}`,
       api: `${process.env.apiUrl}${process.env.apiDirectory}blogs`,
       modelName: 'News & Activity',
       listDatas: null,
       disabledExport: false,
+      blogCategories: null,
       queryParams: {
         size: 20,
         q: '',
         page: 1,
-        show: 'active'
+        show: 'active',
+        category: ''
       },
       tableHeaders: [
         {
@@ -259,6 +282,9 @@ export default {
       ...this.queryParams,
       ...this.$route.query
     }
+    if (!this.queryParams.category) {
+      this.queryParams.category = ''
+    }
     const searchParams = new URLSearchParams(this.queryParams).toString()
     try {
       const datas = await this.$axios.$get(`${this.api}${(searchParams ? '?' + searchParams : '')}`)
@@ -271,6 +297,10 @@ export default {
       this.$nuxt.error({ statusCode: e.response.status, message: e.response.data.message })
     }
     this.$breadcrumbs.clear()
+  },
+  async created () {
+    const blogCategories = await this.$axios.$get(`${this.apiPath}blog-categories`)
+    this.blogCategories = blogCategories.rows
   },
   head () {
     return {

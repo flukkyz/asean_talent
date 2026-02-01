@@ -99,6 +99,7 @@
             item-value="id"
             item-text="name"
             outlined
+            class="mt-5"
             dense
             :rules="rules.blog_category_id"
           >
@@ -117,7 +118,7 @@
             append-icon
             outlined
             dense
-            class="mt-5"
+            class="mt-3"
             hint="Input Tags and Enter or Tab for added"
             clearable
             chips
@@ -193,7 +194,7 @@ export default {
     }
   },
   created () {
-    this.$bus.$on('open-blog-form', async(data) => {
+    this.$bus.$on('open-blog-form', async (data) => {
       this.dialogWidth = 1399
       this.$overlay.showLoading()
       this.saving = false
@@ -227,7 +228,7 @@ export default {
   methods: {
     async fetchRefs () {
       await Promise.all([
-        this.$axios.$get(`${this.apiPath}blog-categories`),
+        this.$axios.$get(`${this.apiPath}blog-categories`)
       ]).then((values) => {
         this.blogCategories = values[0].rows
       })

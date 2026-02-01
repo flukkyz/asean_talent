@@ -25,12 +25,16 @@ module.exports = {
       page,
       size,
       q,
+      category,
       show
     } = req.query
 
     let where = {}
     if (!show || show !== 'all') {
       where.active = true
+    }
+    if (category) {
+      where.blog_category_id = category
     }
 
     if (q) {

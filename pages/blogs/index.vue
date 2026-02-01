@@ -13,7 +13,7 @@
         <p class="headline mb-0 themeAccent--text font-weight-bold mr-3 my-1">
           Search
         </p>
-        <div :class="['xs', 'sm'].includes($vuetify.breakpoint.name) ? '' : 'mr-3'" :style="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'width: 100%;' : 'width: 380px;'">
+        <div :class="['flex-grow-1','xs', 'sm'].includes($vuetify.breakpoint.name) ? '' : 'mr-3'" style="width: 100%;">
           <v-form @submit.prevent="$fetch()">
             <v-text-field
               v-model="queryParams.q"
@@ -34,6 +34,21 @@
             </v-text-field>
           </v-form>
         </div>
+        <v-autocomplete
+          v-if="blogCategories"
+          v-model="queryParams.category"
+          :items="blogCategories"
+          item-value="id"
+          item-text="name"
+          outlined
+          clearable
+          class="my-1 rounded-lg flex-shrink-0"
+          :style="['xs', 'sm'].includes($vuetify.breakpoint.name) ? 'width: 100%;' : ''"
+          hide-details
+          label="Category"
+          dense
+          @change="$fetch()"
+        />
       </div>
       <!-- <div class="d-flex align-center mb-5">
         <h1 class="display-1 font-weight-bold black--text">
@@ -91,13 +106,16 @@ export default {
   data () {
     return {
       pageName: this.$t('NEWS_AND_ACTIVITIES'),
+      apiPath: `${process.env.apiUrl}${process.env.apiDirectory}`,
       basePath: `${process.env.baseUrl}${this.$route.fullPath}`,
       api: `${process.env.apiUrl}${process.env.apiDirectory}blogs`,
       listDatas: null,
+      blogCategories: null,
       queryParams: {
         size: 20,
         q: '',
-        page: 1
+        page: 1,
+        category: null
       }
     }
   },
@@ -105,6 +123,9 @@ export default {
     this.queryParams = {
       ...this.queryParams,
       ...this.$route.query
+    }
+    if (!this.queryParams.category) {
+      this.queryParams.category = ''
     }
     const searchParams = new URLSearchParams(this.queryParams).toString()
     try {
@@ -125,8 +146,10 @@ export default {
       urlPath: this.basePath
     })
   },
-  created () {
+  async created () {
     this.$breadcrumbs.clear()
+    const blogCategories = await this.$axios.$get(`${this.apiPath}blog-categories`)
+    this.blogCategories = blogCategories.rows
   },
   methods: {
     search (q) {
